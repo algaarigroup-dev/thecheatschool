@@ -16,6 +16,10 @@ const Faq = () => {
 
   const items = [
   {
+    question: "How is this different from an online course?",
+    answer: "Online courses give you videos and a certificate. We give you live classes, a real deliverable every month, weekly coach feedback and 1:1 communication coaching. You finish with a portfolio and a public track record, and the certificate is only issued once every deliverable is done."
+  },
+  {
     question: "What courses do you offer?",
     answer: "Admissions are open for the Civil Cheatcamp, our 90 day civil engineering bootcamp covering AutoCAD, Revit, project management, quantity surveying and AI in construction. Our AI Engineering bootcamp is launching soon; you can register your interest on its page."
   },

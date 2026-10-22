@@ -11,11 +11,11 @@ const CTA = () => {
             <div className="grid overflow-hidden text-white shadow-2xl md:grid-cols-2 bg-[#e83f25] rounded-xl">
               <aside className="p-8 space-y-4 md:p-16">
                 <h2 className="text-2xl font-bold tracking-tight md:text-4xl" style={{ fontFamily: 'Antonio, sans-serif' }}>
-                  Ready to Master Civil Engineering?
+                  Want to See How It Works?
                 </h2>
 
                 <p className="font-medium text-white/90 md:text-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-                  Start your journey from student to industry professional in 90 days. Join the community to hear first when the next batch opens.
+                  Join our WhatsApp community. See what students are building, ask questions, and hear first when new programs open.
                 </p>
 
                 <div className="pt-2">
@@ -36,7 +36,7 @@ const CTA = () => {
                 <img
                   className="absolute inset-0 object-cover object-center w-full h-full mt-16 -mr-16 rounded-tl-xl"
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"
-                  alt="Civil engineering education platform" />
+                  alt="Students working on a real engineering project" />
                 
               </aside>
             </div>

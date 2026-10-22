@@ -4,9 +4,9 @@
 export const SITE = {
   name: "The Cheat School",
   url: "https://thecheatschool.in",
-  defaultTitle: "The Cheat School | 90 Day Job Ready Bootcamps for Engineering Students",
+  defaultTitle: "The Cheat School | Real Projects, Not Lectures",
   defaultDescription:
-    "90 day project based bootcamps that take engineering students from classroom to site. Live classes, real projects, internship documentation and 1:1 personality coaching.",
+    "Not another online course. Live classes, a real project deliverable every month, a public track record, daily accountability and 1:1 communication coaching for engineering students.",
   ogImage: "/the-cheat-school.png",
 };
 

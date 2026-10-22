@@ -1,111 +1,99 @@
 import React from "react";
-import { Wrench, Cpu, ArrowRight } from "lucide-react";
+import { X, Check } from "lucide-react";
 
-const Features = () => {
-  const courses = [
+// Homepage section: how The Cheat School differs from a typical course.
+// Every point here is backed by how the programs actually run
+// (see the course pages for the schedule and deliverables).
+const rows = [
   {
-    id: 1,
-    number: "01",
-    title: "Civil Engineering Bootcamp",
-    description:
-    "Master AutoCAD, Revit, BIM, and construction management. From structural design to site execution in 90 days.",
-    icon: Wrench,
-    link: "/civil-engineering",
-    bgColor: "#e83f25",
-    cta: "Learn More"
+    topic: "How you learn",
+    typical: "Recorded lectures you watch alone",
+    ours: "Live classes, then you apply it the same week on a real project",
   },
   {
-    id: 2,
-    number: "02",
-    title: "AI Engineering Bootcamp",
-    description:
-    "Learn Machine Learning, AI tools, and intelligent systems. Build real-world AI projects and deploy production models.",
-    icon: Cpu,
-    link: "/ai-engineering",
-    bgColor: "#2b2b2b",
-    cta: "Coming Soon"
-  }];
+    topic: "What you finish with",
+    typical: "A certificate",
+    ours: "A portfolio of project deliverables and internship documentation",
+  },
+  {
+    topic: "Proof of skill",
+    typical: "Nothing anyone can see",
+    ours: "Weekly LinkedIn posts and video updates that build a public track record",
+  },
+  {
+    topic: "Accountability",
+    typical: "Finish whenever, or never",
+    ours: "Daily reflection videos, weekly coach feedback and fixed deadlines",
+  },
+  {
+    topic: "Communication skills",
+    typical: "Assumed, not taught",
+    ours: "1:1 coaching, mock client meetings, CV and interview prep",
+  },
+  {
+    topic: "Certificate",
+    typical: "Given for attending",
+    ours: "Earned only when every deliverable is submitted",
+  },
+];
 
-
+const Features = () => {
   return (
     <section className="py-20 bg-background relative overflow-hidden">
-      {}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full opacity-10 -translate-y-32 translate-x-32"></div>
-      <div className="absolute top-20 right-20 w-40 h-40 bg-secondary rounded-full opacity-8"></div>
-
-      <div className="absolute bottom-1/4 left-10 w-32 h-32 border-4 border-primary rounded-full opacity-10"></div>
-      <div className="absolute top-1/3 left-1/4 w-20 h-20 bg-secondary opacity-6 rotate-45"></div>
-      <div className="absolute bottom-10 right-1/3 w-24 h-24 bg-primary opacity-8"></div>
-      <div className="absolute top-2/3 right-10 w-16 h-16 border-4 border-secondary opacity-8 rotate-12"></div>
-      <div className="absolute bottom-1/3 left-1/3 w-28 h-28 rounded-full bg-primary opacity-6"></div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {}
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-5xl lg:text-6xl font-bold font-primary">
-            EXPLORE OUR <span className="text-primary">COURSES</span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-primary">
+            A TYPICAL COURSE <span className="text-primary">VS</span> THE CHEAT SCHOOL
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-secondary">
-            Choose your path to becoming an industry-ready professional in just 90 days
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-secondary">
+            College teaches you the theory. Online courses teach it again. We make
+            you use it, show it and explain it.
           </p>
         </div>
 
-        {}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {courses.map((course) => {
-            const IconComponent = course.icon;
-            return (
-              <div
-                key={course.id}
-                className="bg-card shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-4 relative overflow-hidden rounded-lg hover:shadow-[0px_0px_25px_rgba(232,63,37,0.15)] transition-all duration-300 group">
-                
-                {}
-                <div
-                  className="w-24 h-24 rounded-full absolute -right-5 -top-7 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundColor: course.bgColor }}>
-                  
-                  <p className="absolute bottom-6 left-7 text-white text-2xl font-bold font-primary">
-                    {course.number}
-                  </p>
-                </div>
-
-                {}
-                <div className="w-12 h-12 transition-transform duration-300 group-hover:scale-110">
-                  <IconComponent
-                    className="w-full h-full"
-                    style={{ color: course.bgColor }}
-                    strokeWidth={1.5} />
-                  
-                </div>
-
-                {}
-                <h3 className="font-bold text-xl text-foreground font-primary">
-                  {course.title}
-                </h3>
-
-                {}
-                <p className="text-sm text-muted-foreground leading-6 font-secondary">
-                  {course.description}
-                </p>
-
-                {}
-                
-                 <a href={course.link}
-                className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all duration-300 font-secondary"
-                style={{ color: course.bgColor }}>
-                  
-                  {course.cta}
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>);
-
-          })}
+        {/* Desktop: three column comparison */}
+        <div className="hidden md:block border border-black rounded-sm overflow-hidden shadow-md">
+          <div className="grid grid-cols-[1fr_1.2fr_1.6fr] bg-black text-white font-primary text-lg">
+            <div className="px-6 py-4"></div>
+            <div className="px-6 py-4 text-white/60">Typical course</div>
+            <div className="px-6 py-4 bg-primary">The Cheat School</div>
+          </div>
+          {rows.map((r, i) => (
+            <div
+              key={r.topic}
+              className={`grid grid-cols-[1fr_1.2fr_1.6fr] font-secondary ${i % 2 ? "bg-dark-grey" : "bg-background"}`}>
+              <div className="px-6 py-5 font-primary text-lg font-bold">{r.topic}</div>
+              <div className="px-6 py-5 text-muted-foreground flex gap-3 items-start">
+                <X className="w-5 h-5 shrink-0 mt-0.5 text-foreground/40" />
+                <span>{r.typical}</span>
+              </div>
+              <div className="px-6 py-5 flex gap-3 items-start border-l-4 border-primary">
+                <Check className="w-5 h-5 shrink-0 mt-0.5 text-primary" />
+                <span className="text-foreground">{r.ours}</span>
+              </div>
+            </div>
+          ))}
         </div>
 
-
+        {/* Mobile: one card per topic */}
+        <div className="md:hidden flex flex-col gap-4">
+          {rows.map((r) => (
+            <div key={r.topic} className="border border-black rounded-sm p-5 shadow-md bg-background">
+              <h3 className="font-primary text-xl font-bold mb-3">{r.topic}</h3>
+              <div className="flex gap-3 items-start text-sm text-muted-foreground font-secondary mb-3">
+                <X className="w-4 h-4 shrink-0 mt-0.5 text-foreground/40" />
+                <span>{r.typical}</span>
+              </div>
+              <div className="flex gap-3 items-start text-sm font-secondary pl-3 border-l-4 border-primary">
+                <Check className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
+                <span>{r.ours}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default Features;

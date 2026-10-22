@@ -31,15 +31,15 @@ const AboutUs = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900"
             style={{ fontFamily: "Antonio, sans-serif" }}>
             
-            WHY CHOOSE US ?
+            WHAT WE DO DIFFERENTLY
           </h2>
           <p
             className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4"
             style={{ fontFamily: "Inter, sans-serif" }}>
             
-            A 90 day professional bootcamp that turns engineering students
-            into industry ready professionals through hands on projects,
-            live classes and personal coaching.
+            Engineering graduates rarely lack theory. They lack proof that they can
+            do the work, and the confidence to explain it. Every Cheat School program
+            is built to close that gap.
           </p>
         </div>
 
@@ -50,13 +50,13 @@ const AboutUs = () => {
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-gray-900"
               style={{ fontFamily: "Antonio, sans-serif" }}>
               
-              3 Hrs/Day
+              Daily
             </div>
             <div
               className="text-xs sm:text-sm text-gray-600"
               style={{ fontFamily: "Inter, sans-serif" }}>
               
-              2 PM to 5 PM IST
+              Live Classes
             </div>
           </div>
 
@@ -65,13 +65,13 @@ const AboutUs = () => {
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-gray-900"
               style={{ fontFamily: "Antonio, sans-serif" }}>
               
-              Sun to Thu
+              Weekly
             </div>
             <div
               className="text-xs sm:text-sm text-gray-600"
               style={{ fontFamily: "Inter, sans-serif" }}>
               
-              Fri &amp; Sat Off
+              Coach Feedback
             </div>
           </div>
 
@@ -86,7 +86,7 @@ const AboutUs = () => {
               className="text-xs sm:text-sm text-gray-600"
               style={{ fontFamily: "Inter, sans-serif" }}>
               
-              On Completion
+              Earned, Not Given
             </div>
           </div>
         </div>
@@ -112,15 +112,15 @@ const AboutUs = () => {
                     className="text-lg sm:text-xl font-bold text-gray-900"
                     style={{ fontFamily: "Antonio, sans-serif" }}>
                     
-                    Industry-Ready Skills
+                    You Build, Not Watch
                   </h3>
                 </div>
                 <p
                   className="text-xs sm:text-sm text-gray-600 leading-relaxed"
                   style={{ fontFamily: "Inter, sans-serif" }}>
                   
-                  Master industry-standard software, tools, and technologies
-                  used by top firms.
+                  Every month ends with a real deliverable built on the same
+                  software firms use, reviewed against a deadline.
                 </p>
               </div>
 
@@ -140,15 +140,15 @@ const AboutUs = () => {
                     className="text-lg sm:text-xl font-bold text-gray-900"
                     style={{ fontFamily: "Antonio, sans-serif" }}>
                     
-                    Personality Development
+                    Communication Is Coached
                   </h3>
                 </div>
                 <p
                   className="text-xs sm:text-sm text-gray-600 leading-relaxed"
                   style={{ fontFamily: "Inter, sans-serif" }}>
                   
-                  1:1 communication & confidence coaching, LinkedIn building,
-                  and interview prep.
+                  1:1 confidence coaching, mock client meetings, CV refinement
+                  and interview prep, built into every week.
                 </p>
               </div>
             </div>
@@ -182,15 +182,15 @@ const AboutUs = () => {
                     className="text-lg sm:text-xl font-bold text-gray-900"
                     style={{ fontFamily: "Antonio, sans-serif" }}>
                     
-                    Real Internship Experience
+                    You Learn in Public
                   </h3>
                 </div>
                 <p
                   className="text-xs sm:text-sm text-gray-600 leading-relaxed"
                   style={{ fontFamily: "Inter, sans-serif" }}>
                   
-                  Work on real industry projects with mentor guidance and actual
-                  professional documentation.
+                  Weekly LinkedIn updates and video check ins turn your progress
+                  into a track record recruiters can actually see.
                 </p>
               </div>
 
@@ -210,15 +210,15 @@ const AboutUs = () => {
                     className="text-lg sm:text-xl font-bold text-gray-900"
                     style={{ fontFamily: "Antonio, sans-serif" }}>
                     
-                    Complete Portfolio
+                    Nobody Drifts
                   </h3>
                 </div>
                 <p
                   className="text-xs sm:text-sm text-gray-600 leading-relaxed"
                   style={{ fontFamily: "Inter, sans-serif" }}>
                   
-                  Graduate with a complete professional portfolio, project
-                  deliverables, and a certificate of completion.
+                  Daily reflection videos and fixed deadlines keep you moving. You
+                  finish with a portfolio, not an unfinished course.
                 </p>
               </div>
             </div>

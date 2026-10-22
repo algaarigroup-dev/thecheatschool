@@ -2,9 +2,9 @@
 // scripts/prerender-meta.mjs at build time to write static HTML per route.
 export const ROUTES_META = {
   "/": {
-    title: "The Cheat School | 90 Day Job Ready Bootcamps for Engineering Students",
+    title: "The Cheat School | Real Projects, Not Lectures",
     description:
-      "90 day project based bootcamps that take engineering students from classroom to site. Live classes, real projects, internship documentation and 1:1 personality coaching.",
+      "Not another online course. Live classes, a real project deliverable every month, a public track record, daily accountability and 1:1 communication coaching for engineering students.",
   },
   "/civil-engineering": {
     title: "Civil Cheatcamp | 90 Day Civil Engineering Bootcamp | The Cheat School",

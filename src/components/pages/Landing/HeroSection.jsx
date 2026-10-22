@@ -6,7 +6,7 @@ import {
   Linkedin,
   MessageCircle } from
 "lucide-react";
-import { GOOGLE_FORM_URL, CONTACT, whatsappLink } from "@/config/site";
+import { CONTACT, whatsappLink } from "@/config/site";
 
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -118,7 +118,7 @@ const HeroSection = () => {
         {}
         <div className="mt-6 md:mt-28 lg:mt-32">
           <p className="text-foreground/70 text-sm md:text-base tracking-[0.3em] uppercase font-secondary">
-            PROFESSIONAL EXCELLENCE
+            NOT ANOTHER ONLINE COURSE
           </p>
         </div>
 
@@ -146,17 +146,18 @@ const HeroSection = () => {
 
         {}
         <p className="text-foreground/80 text-lg md:text-xl lg:text-2xl font-secondary mb-12 max-w-3xl text-center px-4">
-          From learning to doing. Gain hands-on experience and become
-          industry-ready with practical professional training.
+          Most courses end with a certificate. Ours end with real project work,
+          a public track record and the confidence to talk about it in an interview.
         </p>
 
         {}
         <div className="flex sm:flex-row gap-4 mb-16">
-          <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-            <button className="px-8 py-4 bg-[#e83f25] cursor-pointer text-white font-semibold font-secondary rounded-lg hover:bg-[#d63820] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
-              Enroll & Start Today <ArrowRight className="inline-block" />
-            </button>
-          </a>
+          <button
+            type="button"
+            onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+            className="px-8 py-4 bg-[#e83f25] cursor-pointer text-white font-semibold font-secondary rounded-lg hover:bg-[#d63820] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+            See How We're Different <ArrowRight className="inline-block" />
+          </button>
         </div>
 
         {}
@@ -166,16 +167,16 @@ const HeroSection = () => {
               90 Days
             </p>
             <p className="text-foreground/70 text-sm md:text-base font-secondary tracking-wide">
-              Job-Ready Transform
+              Classroom to Job Ready
             </p>
           </div>
           <div className="hidden sm:block w-px bg-foreground/20"></div>
           <div>
             <p className="text-foreground text-3xl md:text-4xl font-bold font-primary mb-1">
-              3+
+              Live
             </p>
             <p className="text-foreground/70 text-sm md:text-base font-secondary tracking-wide">
-              Live Projects
+              Projects, Not Lectures
             </p>
           </div>
           <div className="hidden sm:block w-px bg-foreground/20"></div>
