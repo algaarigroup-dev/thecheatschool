@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import CadCursor from "./CadCursor";
 import {
   ChevronDown,
   Instagram,
@@ -8,7 +9,14 @@ import {
 "lucide-react";
 import { CONTACT, whatsappLink } from "@/config/site";
 
+// Parallax offset for a decorative layer: depth in px at the hero's edges.
+const drift = (depth) => ({
+  transform: `translate3d(calc(var(--mx, 0) * ${depth}px), calc(var(--my, 0) * ${depth}px), 0)`,
+  transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)"
+});
+
 const HeroSection = () => {
+  const heroRef = useRef(null);
   const [currentWord, setCurrentWord] = useState(0);
   const words = ["Theory", "Classroom", "Concepts", "Learning"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -28,7 +36,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative min-h-[85vh] md:h-screen mt-26 w-full overflow-visible">
+    <div ref={heroRef} className="relative min-h-[85vh] md:h-screen mt-26 w-full overflow-visible">
       {}
       <div className="absolute inset-0 bg-background dark:bg-background">
         {}
@@ -48,15 +56,15 @@ const HeroSection = () => {
         {}
         <div
           className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary"
-          style={{ opacity: 0.15 }}>
+          style={{ opacity: 0.15, ...drift(-18) }}>
         </div>
         <div
           className="absolute top-1/3 right-1/3 w-48 h-48 bg-primary"
-          style={{ opacity: 0.08 }}>
+          style={{ opacity: 0.08, ...drift(10) }}>
         </div>
         <div
           className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-primary"
-          style={{ opacity: 0.2 }}>
+          style={{ opacity: 0.2, ...drift(-28) }}>
         </div>
 
         {}
@@ -70,9 +78,13 @@ const HeroSection = () => {
         </div>
 
         {}
-        <div className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-5 h-5 rotate-45 bg-primary"></div>
+        <div className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary" style={drift(-40)}></div>
+        <div className="absolute bottom-1/3 right-1/3" style={drift(34)}>
+          <div className="w-5 h-5 rotate-45 bg-primary"></div>
+        </div>
       </div>
+
+      <CadCursor hostRef={heroRef} />
 
       {}
       <div className="absolute right-8 top-1/3 sm:top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20">
