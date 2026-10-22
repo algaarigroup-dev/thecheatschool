@@ -5,7 +5,7 @@ import Navbar from './components/global/Navbar';
 import Footer from './components/global/Footer';
 import usePageMeta from './hooks/usePageMeta';
 import { ROUTES_META } from './config/routes-meta';
-import { LEGAL_READY } from './config/site';
+import { legalPageReady } from './config/site';
 
 // Applies title and meta tags for every static route. Dynamic pages such as
 // a single blog post set their own via usePageMeta.
@@ -13,7 +13,7 @@ const RouteMeta = () => {
   const { pathname } = useLocation();
   const clean = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
   const meta = ROUTES_META[clean];
-  if (meta?.legal && !LEGAL_READY) return null;
+  if (meta?.legal && !legalPageReady(clean.slice(1))) return null;
   return meta ? <RouteMetaApply path={clean} meta={meta} /> : null;
 };
 

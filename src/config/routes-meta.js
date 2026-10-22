@@ -47,7 +47,7 @@ export const ROUTES_META = {
   },
   "/refund-policy": {
     title: "Refund Policy | The Cheat School",
-    description: "Refund and cancellation terms for The Cheat School programs.",
+    description: "The Cheat School refund policy: program fees are non refundable once the enrolment agreement is signed.",
     legal: true,
   },
 };

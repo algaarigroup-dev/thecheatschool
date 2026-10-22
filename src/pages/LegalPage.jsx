@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LEGAL, LEGAL_READY, CONTACT, SITE } from "@/config/site";
+import { LEGAL, CONTACT, SITE, legalPageReady } from "@/config/site";
 import NotFound from "./not-found";
 
 // Starter legal text. Have it reviewed by a lawyer before relying on it.
@@ -35,10 +35,9 @@ const docs = {
   "refund-policy": {
     title: "Refund Policy",
     sections: [
-      ["Full refund window", `You can request a full refund within ${LEGAL.refundWindowDays} days of your batch start date by writing to ${CONTACT.email} from the email address you registered with.`],
-      ["After the window", `After ${LEGAL.refundWindowDays} days from batch start, fees are not refundable. If you cannot continue for a genuine reason, we may offer a transfer to a later batch at our discretion.`],
-      ["If we cancel", "If we cancel or postpone a batch and you do not want to move to the new dates, you will receive a full refund."],
-      ["How refunds are paid", "Approved refunds are paid to the original payment method within 7 working days of approval. Bank or currency conversion charges, if any, are not refundable."],
+      ["No refunds", "All program fees are non refundable once you have signed your enrolment agreement. This applies in every case, including if you stop attending, change your plans, miss sessions, or do not reach a target score or result."],
+      ["Before you sign", `Please read your enrolment agreement carefully and ask us any questions before signing. You can reach us at ${CONTACT.email} or ${CONTACT.phoneDisplay}. Signing the agreement confirms that you accept this policy.`],
+      ["If we reschedule a batch", "If we postpone or cancel a batch, you will be moved to the next available batch of the same program at no extra cost."],
       ["Contact", `${CONTACT.email} or ${CONTACT.phoneDisplay}`],
     ],
   },
@@ -46,7 +45,7 @@ const docs = {
 
 const LegalPage = ({ doc }) => {
   const content = docs[doc];
-  if (!LEGAL_READY || !content) return <NotFound />;
+  if (!content || !legalPageReady(doc)) return <NotFound />;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-36 pb-20">

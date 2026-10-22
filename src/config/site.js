@@ -40,16 +40,20 @@ export const FRENCH = {
 // Leave empty to show "Admissions open".
 export const NEXT_BATCH_DATE = "";
 
-// Legal details. The Terms, Privacy and Refund pages and their footer links
-// stay hidden until legalName, address and refundWindowDays are filled in.
+// Legal details. Terms and Privacy pages stay hidden until legalName and
+// address are filled in. The Refund page shows as soon as refundPolicy is set.
 export const LEGAL = {
   legalName: "", // e.g. "The Cheat School Private Limited"
   address: "", // registered address in India
   jurisdictionCity: "", // e.g. "Hyderabad"
-  refundWindowDays: null, // e.g. 7  (full refund if requested within N days of batch start)
+  // Refund rule. "none" = no refunds once the enrolment agreement is signed.
+  refundPolicy: "none",
   lastUpdated: "22 October 2026",
 };
 
-export const LEGAL_READY = Boolean(
-  LEGAL.legalName && LEGAL.address && LEGAL.refundWindowDays !== null
-);
+export const LEGAL_READY = Boolean(LEGAL.legalName && LEGAL.address);
+export const REFUND_READY = Boolean(LEGAL.refundPolicy);
+
+// Which legal pages are live.
+export const legalPageReady = (doc) =>
+  doc === "refund-policy" ? REFUND_READY : LEGAL_READY;

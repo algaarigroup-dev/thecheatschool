@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROUTES_META } from "../src/config/routes-meta.js";
-import { SITE, LEGAL_READY } from "../src/config/site.js";
+import { SITE, legalPageReady } from "../src/config/site.js";
 import { ARTICLES, ARTICLE_AUTHOR } from "../src/content/articles.js";
 import { articleToHtml, blogIndexHtml } from "../src/content/render-html.js";
 
@@ -44,7 +44,7 @@ const render = (route, { title, description, ogType, jsonLd, bodyHtml, keywords 
   return html;
 };
 
-const routes = Object.entries(ROUTES_META).filter(([, m]) => !m.legal || LEGAL_READY);
+const routes = Object.entries(ROUTES_META).filter(([r, m]) => !m.legal || legalPageReady(r.slice(1)));
 
 for (const [route, meta] of routes) {
   const html = render(route, route === "/blogs" ? { ...meta, bodyHtml: blogIndexHtml(ARTICLES) } : meta);

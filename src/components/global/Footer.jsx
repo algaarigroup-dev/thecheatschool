@@ -12,7 +12,7 @@ import {
 "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { CONTACT, whatsappLink, LEGAL_READY } from "@/config/site";
+import { CONTACT, whatsappLink, LEGAL_READY, REFUND_READY } from "@/config/site";
 
 const Footer = () => {
   return (
@@ -73,9 +73,9 @@ const Footer = () => {
             { name: "Contact Us", path: "/contact-us" },
             ...(LEGAL_READY ? [
               { name: "Terms of Service", path: "/terms" },
-              { name: "Privacy Policy", path: "/privacy" },
-              { name: "Refund Policy", path: "/refund-policy" }] :
-            [])].
+              { name: "Privacy Policy", path: "/privacy" }] :
+            []),
+            ...(REFUND_READY ? [{ name: "Refund Policy", path: "/refund-policy" }] : [])].
             map((link) =>
             <li key={link.name}>
                 <NavLink
