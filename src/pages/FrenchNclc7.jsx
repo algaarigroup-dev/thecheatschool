@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import VoiceWave from "@/components/pages/french/VoiceWave";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { FRENCH } from "@/config/site";
 
@@ -111,11 +112,13 @@ const points = [
 ];
 
 const FrenchNclc7 = () => {
+  const heroRef = useRef(null);
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="bg-dark-grey text-foreground pt-36 pb-16 md:pt-44 md:pb-24 px-4 sm:px-6 border-b border-black">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 items-end">
+      <section ref={heroRef} className="relative overflow-hidden bg-dark-grey text-foreground pt-36 pb-24 md:pt-44 md:pb-32 px-4 sm:px-6 border-b border-black">
+        <VoiceWave hostRef={heroRef} />
+        <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 items-end">
           <div>
             <p className="text-sm tracking-[0.3em] uppercase text-foreground/60 font-secondary mb-4">
               French for Express Entry
