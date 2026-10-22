@@ -26,11 +26,9 @@ export const whatsappLink = (message = "") =>
 export const GOOGLE_FORM_URL =
   "https://docs.google.com/forms/d/1scvsMHo5aHqM4sqUaatsb0cxmCEqV179kPoi2OvpkW8/viewform";
 
-// French NCLC 7 program. Edit price, contact and batch info here.
+// French NCLC 7 program. Edit contact and batch info here.
 export const FRENCH = {
   programName: "NCLC 7 Fast Track",
-  price: "AED 3,000",
-  priceNote: "One package. Full payment before the program starts.",
   // WhatsApp number for French enquiries (country code, no plus).
   // Defaults to the main number; set your own if UAE clients should reach you directly.
   whatsappE164: "919989520942",

@@ -102,16 +102,10 @@ const points = [
     n: 7,
     title: "One package, one goal",
     body: (
-      <>
-        <p>
-          No tiers, no upsells. One program with one target: NCLC 7 in all four skills.
-        </p>
-        <div className="mt-5 inline-flex flex-col gap-1 border-2 border-primary rounded-sm px-6 py-4">
-          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{FRENCH.programName}</span>
-          <span className="font-primary text-4xl font-bold">{FRENCH.price}</span>
-          <span className="text-sm text-muted-foreground">{FRENCH.priceNote}</span>
-        </div>
-      </>
+      <p>
+        No tiers, no upsells. One program with one target: NCLC 7 in all four skills. Message us
+        for fees and the next batch dates.
+      </p>
     ),
   },
 ];
