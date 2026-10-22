@@ -1,17 +1,22 @@
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { lazy } from "react";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
-import Events from "./pages/EventsPage";
-import Gallery from "./pages/GalleryPage";
-import ContactUs from "./pages/ContactUsPage";
+const Events = lazy(() => import("./pages/EventsPage"));
+const Gallery = lazy(() => import("./pages/GalleryPage"));
+const ContactUs = lazy(() => import("./pages/ContactUsPage"));
 import LandingPage from "./pages/LandingPage";
-import BlogsPage from "./pages/BlogsPage";
-import BlogDetailPage from "./pages/BlogDetailPage";
+const BlogsPage = lazy(() => import("./pages/BlogsPage"));
+const BlogDetailPage = lazy(() => import("./pages/BlogDetailPage"));
 import NotFound from "./pages/not-found";
-import CivilEngineering from "./pages/CivilEngineering";
-import AiCourses from "./pages/AiEngineering";
+const CivilEngineering = lazy(() => import("./pages/CivilEngineering"));
+const AiCourses = lazy(() => import("./pages/AiEngineering"));
+const LegalPage = lazy(() => import("./pages/LegalPage"));
+const FrenchNclc7 = lazy(() => import("./pages/FrenchNclc7"));
 
-const router = createBrowserRouter([
+// Hash routing is used only for the hosted preview build (VITE_PREVIEW=1).
+const createRouter = import.meta.env.VITE_PREVIEW ? createHashRouter : createBrowserRouter;
+
+const router = createRouter([
 {
   path: "/",
   element: <Layout />,
@@ -48,7 +53,11 @@ const router = createBrowserRouter([
 
     path: "ai-engineering",
     element: <AiCourses />
-  }]
+  },
+  { path: "french-nclc-7", element: <FrenchNclc7 /> },
+  { path: "terms", element: <LegalPage doc="terms" /> },
+  { path: "privacy", element: <LegalPage doc="privacy" /> },
+  { path: "refund-policy", element: <LegalPage doc="refund-policy" /> }]
 
 
 },

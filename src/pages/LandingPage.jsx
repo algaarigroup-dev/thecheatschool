@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Home, Info, Zap, DollarSign, HelpCircle, Rocket } from "lucide-react";
+import { Home, Info, Zap, HelpCircle, Rocket } from "lucide-react";
 import HeroSection from "@/components/pages/Landing/HeroSection";
 import AboutUs from "@/components/pages/Landing/AboutUs";
 import Features from "@/components/pages/Landing/Features";
@@ -15,7 +15,6 @@ const LandingPage = () => {
   { id: "hero", name: "Hero", icon: Home },
   { id: "about", name: "About Us", icon: Info },
   { id: "features", name: "Features", icon: Zap },
-  { id: "pricing", name: "Pricing", icon: DollarSign },
   { id: "faq", name: "FAQ", icon: HelpCircle },
   { id: "cta", name: "Get Started", icon: Rocket }];
 

@@ -1,0 +1,490 @@
+// Cheat sheet articles that ship with the site (no CMS needed).
+// Each one is prerendered to static HTML at build time for search engines.
+//
+// Block types: { p }, { h2 }, { h3 }, { ul: [] }, { ol: [] },
+// { table: { head: [], rows: [[]] } }, { tip }, { cta: { text, to, label } }
+//
+// Keep facts checkable. Immigration and exam rules change: update `updated`
+// and the content when they do.
+
+const D = "2026-10-22";
+const AUTHOR = "The Cheat School Team";
+
+export const ARTICLES = [
+  {
+    slug: "autocad-shortcuts-cheat-sheet",
+    title: "AutoCAD Shortcuts Cheat Sheet: 40 Commands Every Civil Engineering Student Should Know",
+    description:
+      "The 40 AutoCAD keyboard shortcuts civil engineering students actually use, grouped by drawing, editing, annotation and layers, plus the function keys that save hours.",
+    category: "Software",
+    keywords: ["autocad shortcuts", "autocad commands list", "autocad cheat sheet", "civil engineering autocad"],
+    date: D,
+    body: [
+      { p: "Most students learn AutoCAD by clicking icons. Professionals type. The difference is speed: a drafter who knows the shortcuts finishes a floor plan in half the time. Here are the 40 commands that cover almost everything you will draw in college and in your first job." },
+      { h2: "Drawing commands" },
+      { table: { head: ["Shortcut", "Command", "Use it for"], rows: [
+        ["L", "LINE", "Straight segments"],
+        ["PL", "PLINE", "Connected lines that behave as one object"],
+        ["REC", "RECTANG", "Rooms, columns, slabs"],
+        ["C", "CIRCLE", "Circular columns, manholes"],
+        ["A", "ARC", "Door swings"],
+        ["H", "HATCH", "Sections, materials, cut walls"],
+        ["B", "BLOCK", "Save a reusable object such as a door"],
+        ["I", "INSERT", "Place a saved block"],
+      ] } },
+      { h2: "Editing commands" },
+      { table: { head: ["Shortcut", "Command", "Use it for"], rows: [
+        ["M", "MOVE", "Move objects"],
+        ["CO", "COPY", "Copy objects"],
+        ["RO", "ROTATE", "Rotate around a base point"],
+        ["MI", "MIRROR", "Symmetrical plans"],
+        ["O", "OFFSET", "Wall thickness in one step"],
+        ["TR", "TRIM", "Cut lines back to an edge"],
+        ["EX", "EXTEND", "Stretch lines to meet an edge"],
+        ["F", "FILLET", "Clean wall corners (radius 0)"],
+        ["CHA", "CHAMFER", "Angled corners"],
+        ["AR", "ARRAY", "Repeating columns or tiles"],
+        ["SC", "SCALE", "Resize objects"],
+        ["S", "STRETCH", "Lengthen part of a drawing"],
+        ["BR", "BREAK", "Split a line"],
+        ["J", "JOIN", "Merge lines into one"],
+        ["X", "EXPLODE", "Break a block or polyline apart"],
+        ["E", "ERASE", "Delete"],
+        ["MA", "MATCHPROP", "Copy layer and style from one object to another"],
+      ] } },
+      { h2: "Annotation and layers" },
+      { table: { head: ["Shortcut", "Command", "Use it for"], rows: [
+        ["DLI", "DIMLINEAR", "Horizontal and vertical dimensions"],
+        ["DAL", "DIMALIGNED", "Dimensions along a slope"],
+        ["MT", "MTEXT", "Paragraph text and notes"],
+        ["DT", "TEXT", "Single line labels"],
+        ["LA", "LAYER", "Layer manager"],
+        ["LT", "LINETYPE", "Hidden and centre lines"],
+        ["PU", "PURGE", "Remove unused layers and blocks before submitting"],
+        ["Z then E", "ZOOM EXTENTS", "See the whole drawing"],
+      ] } },
+      { h2: "Function keys" },
+      { ul: [
+        "F3: Object snap on or off",
+        "F7: Grid on or off",
+        "F8: Ortho mode, for perfectly straight walls",
+        "F10: Polar tracking",
+        "F12: Dynamic input",
+      ] },
+      { tip: "Practise one group per day. By the end of a week, stop using the ribbon entirely for these commands. That habit is what employers notice in a drafting test." },
+      { cta: { text: "Our Civil Cheatcamp covers AutoCAD and Revit through real 2BHK projects, not tutorials.", to: "/civil-engineering", label: "See the Civil Cheatcamp" } },
+    ],
+  },
+  {
+    slug: "revit-shortcuts-cheat-sheet",
+    title: "Revit Shortcuts Cheat Sheet for Beginners: The 30 You Will Use Daily",
+    description:
+      "A beginner friendly Revit keyboard shortcut list for walls, doors, views, editing and annotation, with tips for setting up your own shortcuts.",
+    category: "Software",
+    keywords: ["revit shortcuts", "revit keyboard shortcuts", "revit cheat sheet", "revit for beginners"],
+    date: D,
+    body: [
+      { p: "Revit shortcuts are two letters typed one after the other, no Enter needed. Learn these 30 and you will rarely touch the ribbon while modelling a building." },
+      { h2: "Modelling" },
+      { table: { head: ["Shortcut", "Action"], rows: [
+        ["WA", "Wall"], ["DR", "Door"], ["WN", "Window"], ["CM", "Place a component"],
+        ["RM", "Room"], ["LL", "Level"], ["GR", "Grid"], ["RP", "Reference plane"],
+      ] } },
+      { h2: "Editing" },
+      { table: { head: ["Shortcut", "Action"], rows: [
+        ["MV", "Move"], ["CO", "Copy"], ["RO", "Rotate"], ["AL", "Align"], ["OF", "Offset"],
+        ["TR", "Trim or extend to corner"], ["SL", "Split element"], ["MM", "Mirror, pick axis"],
+        ["DM", "Mirror, draw axis"], ["GP", "Create group"], ["PN", "Pin"], ["UP", "Unpin"],
+      ] } },
+      { h2: "Views and visibility" },
+      { table: { head: ["Shortcut", "Action"], rows: [
+        ["VV or VG", "Visibility and graphics settings"], ["HH", "Temporarily hide element"],
+        ["HI", "Temporarily isolate element"], ["HR", "Reset temporary hide or isolate"],
+        ["TL", "Thin lines toggle"], ["ZA", "Zoom all to fit"], ["WT", "Tile open windows"],
+      ] } },
+      { h2: "Annotation" },
+      { table: { head: ["Shortcut", "Action"], rows: [
+        ["DI", "Aligned dimension"], ["TG", "Tag by category"], ["RT", "Room tag"],
+      ] } },
+      { h2: "Make your own" },
+      { p: "Type KS to open Keyboard Shortcuts. Assign keys to the commands you use most that do not have one yet. Export the file and carry it to every computer you work on." },
+      { tip: "Isolate (HI) before you edit anything complex. It hides everything else so you do not move the wrong wall." },
+      { cta: { text: "Learn Revit by modelling and documenting a complete 2BHK in our 90 day Civil Cheatcamp.", to: "/civil-engineering", label: "See the Civil Cheatcamp" } },
+    ],
+  },
+  {
+    slug: "boq-cheat-sheet-civil-engineering",
+    title: "BOQ Cheat Sheet: How to Prepare a Bill of Quantities for a 2BHK House",
+    description:
+      "Step by step BOQ preparation for a small residential building: item order, standard units, quantity formulas for concrete, brickwork, plaster and steel, and common mistakes.",
+    category: "Quantity Surveying",
+    keywords: ["boq preparation", "bill of quantities", "quantity surveying formulas", "steel weight formula d2/162"],
+    date: D,
+    body: [
+      { p: "A Bill of Quantities (BOQ) lists every item of work in a project with its quantity and unit, so contractors can price it. Freshers who can produce a clean BOQ are useful on day one, because every site and every estimation team needs one." },
+      { h2: "The standard order of items" },
+      { ol: [
+        "Earthwork in excavation",
+        "Plain cement concrete (PCC) below foundations",
+        "Reinforced cement concrete (RCC): footings, columns, beams, slabs",
+        "Steel reinforcement",
+        "Brickwork or blockwork",
+        "Plastering",
+        "Flooring and skirting",
+        "Doors and windows",
+        "Painting",
+        "Plumbing and electrical (often as separate sections)",
+      ] },
+      { h2: "Units you must get right" },
+      { table: { head: ["Item", "Unit"], rows: [
+        ["Excavation, concrete, brickwork", "Cubic metre (cum)"],
+        ["Plaster, flooring, painting, formwork", "Square metre (sqm)"],
+        ["Reinforcement steel", "Kilogram or tonne"],
+        ["Skirting, railings", "Running metre (rmt)"],
+        ["Doors, windows, fixtures", "Numbers (nos)"],
+      ] } },
+      { h2: "Quantity formulas" },
+      { ul: [
+        "Concrete volume = length x breadth x depth",
+        "Brickwork = wall length x height x thickness, minus door and window openings",
+        "Plaster = wall length x height for each face, minus openings",
+        "Steel weight per metre (kg) = d squared / 162, where d is bar diameter in mm. A 12 mm bar weighs about 0.89 kg per metre.",
+      ] },
+      { h2: "Common mistakes" },
+      { ul: [
+        "Forgetting to deduct openings from brickwork and plaster",
+        "Mixing units inside one item",
+        "Counting the same column and beam junction concrete twice",
+        "Leaving out lap lengths when calculating steel",
+        "No item descriptions: every line should say exactly what work and material is included",
+      ] },
+      { tip: "Keep a separate measurement sheet that shows every dimension you used. A BOQ without a measurement sheet cannot be checked, and checking is what your senior will do first." },
+      { cta: { text: "Quantity surveying and 2BHK estimation are a full module in the Civil Cheatcamp.", to: "/civil-engineering", label: "See the Civil Cheatcamp" } },
+    ],
+  },
+  {
+    slug: "civil-engineering-interview-questions-freshers",
+    title: "Civil Engineering Interview Cheat Sheet: 20 Technical Questions Freshers Get Asked",
+    description:
+      "The technical questions civil engineering freshers are asked most often in site and design interviews, with short, correct answers you can build on.",
+    category: "Careers",
+    keywords: ["civil engineering interview questions", "civil engineer fresher interview", "site engineer interview questions"],
+    date: D,
+    body: [
+      { p: "Interviewers for site and junior design roles ask the same core questions again and again. Know these answers cold, then add an example from a project you actually worked on." },
+      { h2: "Concrete" },
+      { ul: [
+        "What does M20 mean? Concrete with a characteristic compressive strength of 20 N/mm² at 28 days. A nominal mix for M20 is 1 : 1.5 : 3 (cement : sand : aggregate).",
+        "What is a slump test? A site test for workability of fresh concrete, measured as the drop in height of a concrete cone.",
+        "Why do we cure concrete? To keep moisture available so cement hydrates fully and the concrete reaches its strength. Typical curing is at least 7 days for ordinary Portland cement.",
+        "Initial and final setting time of OPC? Initial not less than 30 minutes, final not more than 600 minutes (10 hours).",
+        "Standard size of a concrete cube for testing? 150 mm x 150 mm x 150 mm.",
+      ] },
+      { h2: "Structures" },
+      { ul: [
+        "One way slab or two way slab? If the longer span divided by the shorter span is more than 2, it is a one way slab.",
+        "Why is clear cover provided? To protect reinforcement from corrosion and fire, and to ensure bond with concrete.",
+        "What is development length? The length of bar needed inside concrete to transfer its stress through bond.",
+        "Where are laps avoided in beams? At points of maximum bending moment, such as midspan for bottom bars.",
+        "What is a cantilever beam? A beam fixed at one end and free at the other.",
+      ] },
+      { h2: "Site and materials" },
+      { ul: [
+        "Standard modular brick size in India? 190 x 90 x 90 mm (200 x 100 x 100 mm with mortar).",
+        "Weight of one bag of cement? 50 kg.",
+        "Density of steel? About 7850 kg/m³.",
+        "What is bulking of sand? Increase in volume of damp sand, which affects volume batching.",
+        "What is a DPC? Damp proof course, a layer that stops moisture rising through walls.",
+      ] },
+      { h2: "Project management" },
+      { ul: [
+        "What is the critical path? The longest sequence of dependent activities; it sets the project duration.",
+        "What is float? How much an activity can be delayed without delaying the project.",
+        "What is a BOQ? A list of all work items with quantities and units, used for pricing.",
+        "What is a DPR? A daily progress report recording work done, labour, materials and issues.",
+        "What is the difference between estimate and tender? An estimate is the owner's expected cost; a tender is a contractor's priced offer.",
+      ] },
+      { tip: "Answer, then prove. Follow every definition with one sentence like 'On my 2BHK project I checked slump before every pour'. That is what separates you from 200 other freshers." },
+      { cta: { text: "Mock interviews and 1:1 communication coaching are built into every Cheat School program.", to: "/civil-engineering", label: "See how it works" } },
+    ],
+  },
+  {
+    slug: "civil-engineering-unit-conversion-cheat-sheet",
+    title: "Civil Engineering Unit Conversion Cheat Sheet for Site Work",
+    description:
+      "Length, area, volume and weight conversions engineers use on site every day, plus standard material densities and the cement bag volume.",
+    category: "Site Work",
+    keywords: ["civil engineering unit conversion", "sq ft to sqm", "cft to cum", "material density chart"],
+    date: D,
+    body: [
+      { p: "Drawings come in metres, clients talk in square feet and suppliers quote in tonnes. Keep this sheet on your phone." },
+      { h2: "Length and area" },
+      { table: { head: ["From", "To"], rows: [
+        ["1 inch", "25.4 mm"], ["1 foot", "0.3048 m"], ["1 metre", "3.281 feet"],
+        ["1 sq ft", "0.0929 sqm"], ["1 sqm", "10.764 sq ft"], ["1 acre", "4046.86 sqm"], ["1 hectare", "2.471 acres"],
+      ] } },
+      { h2: "Volume" },
+      { table: { head: ["From", "To"], rows: [
+        ["1 cum", "35.315 cft"], ["1 cft", "0.0283 cum"], ["1 cum", "1000 litres"], ["1 bag of cement (50 kg)", "about 0.0347 cum (1.226 cft)"],
+      ] } },
+      { h2: "Weight" },
+      { table: { head: ["From", "To"], rows: [
+        ["1 tonne", "1000 kg"], ["1 kN", "about 102 kg force"], ["1 N/mm²", "1 MPa"],
+      ] } },
+      { h2: "Typical material densities" },
+      { table: { head: ["Material", "Approx. density"], rows: [
+        ["Steel", "7850 kg/m³"], ["Plain concrete", "2400 kg/m³"], ["Reinforced concrete", "2500 kg/m³"],
+        ["Cement", "1440 kg/m³"], ["Dry sand", "1450 to 1650 kg/m³"], ["Water", "1000 kg/m³"],
+      ] } },
+      { tip: "Always convert to one unit system before you calculate, then convert the answer back for the client. Mixed units inside one calculation cause most site estimation errors." },
+      { cta: { text: "Learn estimation on a real project with feedback from a coach.", to: "/civil-engineering", label: "See the Civil Cheatcamp" } },
+    ],
+  },
+  {
+    slug: "critical-path-method-cheat-sheet",
+    title: "Critical Path Method Cheat Sheet: Float, Dependencies and Scheduling Basics",
+    description:
+      "CPM explained simply for engineering students: forward and backward pass, total and free float, the four dependency types and how MS Project and Primavera use them.",
+    category: "Project Management",
+    keywords: ["critical path method", "total float formula", "cpm scheduling", "primavera basics", "ms project basics"],
+    date: D,
+    body: [
+      { p: "Every construction schedule in MS Project or Primavera P6 is built on the Critical Path Method. Understand these terms and the software stops being confusing." },
+      { h2: "Key terms" },
+      { table: { head: ["Term", "Meaning"], rows: [
+        ["ES (early start)", "Earliest an activity can begin"],
+        ["EF (early finish)", "ES + duration"],
+        ["LS (late start)", "Latest it can begin without delaying the project"],
+        ["LF (late finish)", "Latest it can finish without delaying the project"],
+        ["Total float", "LS minus ES (or LF minus EF)"],
+        ["Free float", "Delay possible without delaying the next activity"],
+        ["Critical path", "Chain of activities with zero total float"],
+      ] } },
+      { h2: "How to calculate it" },
+      { ol: [
+        "List activities, durations and what each depends on.",
+        "Forward pass: work left to right to find ES and EF for each activity.",
+        "Backward pass: work right to left from the project end to find LF and LS.",
+        "Compute float. Activities with zero float form the critical path.",
+      ] },
+      { h2: "The four dependency types" },
+      { ul: [
+        "Finish to Start (FS): B starts after A finishes. Example: formwork then concreting. The most common type.",
+        "Start to Start (SS): B starts after A starts. Example: plastering can start once brickwork has started on lower floors.",
+        "Finish to Finish (FF): B finishes after A finishes.",
+        "Start to Finish (SF): B finishes after A starts. Rare in construction.",
+      ] },
+      { tip: "If someone asks you to shorten a project, only shortening critical activities helps. Speeding up an activity with float changes nothing." },
+      { cta: { text: "Project management with MS Project and Primavera is a core Civil Cheatcamp module.", to: "/civil-engineering", label: "See the Civil Cheatcamp" } },
+    ],
+  },
+  {
+    slug: "linkedin-profile-cheat-sheet-engineering-students",
+    title: "LinkedIn Cheat Sheet for Engineering Students: Build a Profile Recruiters Open",
+    description:
+      "A section by section LinkedIn checklist for engineering students: headline formula, about section, featured projects and a simple weekly posting routine.",
+    category: "Careers",
+    keywords: ["linkedin for engineering students", "linkedin headline for students", "linkedin profile tips"],
+    date: D,
+    body: [
+      { p: "Recruiters search LinkedIn by skill and location. If your profile says 'Student at XYZ College' and nothing else, you do not show up. Fix it in one evening with this checklist." },
+      { h2: "Profile checklist" },
+      { ul: [
+        "Photo: face clearly visible, plain background, smiling. No group photos.",
+        "Banner: a picture of your project, a drawing, or a site. Not the default blue.",
+        "Headline formula: Role you want | 2 to 3 skills | proof. Example: Civil Engineering Student | AutoCAD, Revit, BOQ | Built a full 2BHK estimate.",
+        "About: 3 short paragraphs. What you are learning, what you have built, what role you want.",
+        "Featured: pin your best project PDF, drawing or video.",
+        "Skills: add the exact software names recruiters search for.",
+        "Location: set the city where you want to work.",
+      ] },
+      { h2: "A weekly posting routine" },
+      { p: "Post once a week about what you learned or built. Keep it to 5 to 8 short lines and one image." },
+      { ol: [
+        "Line 1: what you did this week, in plain words.",
+        "Lines 2 to 5: the problem, what you tried, what worked.",
+        "Line 6: one thing you would do differently.",
+        "Image: a screenshot, drawing or site photo.",
+      ] },
+      { tip: "Twelve weekly posts is a 3 month public track record. That is exactly what you can point to when an interviewer asks what you have done." },
+      { cta: { text: "Weekly LinkedIn updates are a required deliverable in every Cheat School program.", to: "/", label: "See what we do differently" } },
+    ],
+  },
+  {
+    slug: "fresher-resume-cheat-sheet-engineers",
+    title: "Fresher Resume Cheat Sheet for Engineers: One Page That Gets Shortlisted",
+    description:
+      "How to write a one page engineering fresher resume: section order, project bullet formula, skills to list and the mistakes that get resumes rejected.",
+    category: "Careers",
+    keywords: ["fresher resume engineer", "civil engineer resume format", "resume for freshers"],
+    date: D,
+    body: [
+      { p: "Recruiters spend seconds on a fresher resume. They look for one thing: evidence that you can do the work. Structure the page around proof." },
+      { h2: "Section order" },
+      { ol: [
+        "Name, phone, email, LinkedIn URL, city",
+        "Two line summary: the role you want and your strongest proof",
+        "Projects (yes, before education)",
+        "Skills: software and technical",
+        "Internships or site experience",
+        "Education",
+      ] },
+      { h2: "The project bullet formula" },
+      { p: "Action verb + what you built + tool + result." },
+      { ul: [
+        "Weak: Worked on a house project in AutoCAD.",
+        "Strong: Drafted complete plans, sections and elevations for a 2BHK in AutoCAD and modelled it in Revit with door and window schedules.",
+        "Strong: Prepared a BOQ for a 2BHK covering 10 work items and reinforcement steel, with a full measurement sheet.",
+      ] },
+      { h2: "Mistakes that get resumes rejected" },
+      { ul: [
+        "More than one page",
+        "Photos, date of birth, father's name and other personal details nobody asked for",
+        "A skills list with no project that proves them",
+        "Unprofessional email addresses",
+        "Spelling errors in software names",
+      ] },
+      { tip: "Save as PDF named FirstName_LastName_Resume.pdf. Never 'resume final final2.docx'." },
+      { cta: { text: "CV refinement and interview prep are built into every Cheat School program.", to: "/", label: "See what we do differently" } },
+    ],
+  },
+  {
+    slug: "site-internship-documentation-cheat-sheet",
+    title: "Site Internship Cheat Sheet: What to Document Every Day",
+    description:
+      "A daily and weekly checklist for civil engineering interns on site: what to photograph, what to log, and how to turn it into a portfolio and internship report.",
+    category: "Site Work",
+    keywords: ["civil engineering internship report", "site internship tips", "internship documentation"],
+    date: D,
+    body: [
+      { p: "Most interns finish a site internship with a certificate and a vague memory. The ones who get hired finish with a record of what they saw, measured and learned. Here is what to capture." },
+      { h2: "Every day" },
+      { ul: [
+        "Date, location and weather",
+        "Activities happening on site and which stage of work they belong to",
+        "Two or three photos with a one line caption each",
+        "One thing you measured or checked yourself",
+        "One question you asked an engineer, and the answer",
+      ] },
+      { h2: "Every week" },
+      { ul: [
+        "Progress summary in 5 lines",
+        "A sketch or marked up drawing of something you studied",
+        "A short video explaining one process, such as rebar checking before a pour",
+      ] },
+      { h2: "At the end" },
+      { ol: [
+        "Pick your 10 best photos and arrange them by construction sequence.",
+        "Write one page on the project: type, size, structure, your role.",
+        "Add 3 problems you saw on site and how they were solved.",
+        "Combine everything into one PDF for your portfolio.",
+      ] },
+      { tip: "Ask permission before photographing any site, and never share client drawings publicly. Document what you learned, not confidential details." },
+      { cta: { text: "Internship documentation is a full month of the Civil Cheatcamp, with coach review.", to: "/civil-engineering", label: "See the Civil Cheatcamp" } },
+    ],
+  },
+  {
+    slug: "tcf-canada-cheat-sheet",
+    title: "TCF Canada Cheat Sheet: Format, Timing and the Scores You Need for NCLC 7",
+    description:
+      "TCF Canada at a glance: the four sections, number of questions and timing, how it is scored, and the exact scores IRCC treats as NCLC 7.",
+    category: "French",
+    keywords: ["tcf canada format", "tcf canada nclc 7 score", "tcf canada cheat sheet", "tcf canada express entry"],
+    date: D,
+    body: [
+      { p: "The TCF Canada is one of the two French tests IRCC accepts for Express Entry. Here is everything about the format on one page." },
+      { h2: "The four sections" },
+      { table: { head: ["Section", "Format", "Time"], rows: [
+        ["Compréhension orale (listening)", "39 multiple choice questions", "35 minutes"],
+        ["Compréhension écrite (reading)", "39 multiple choice questions", "60 minutes"],
+        ["Expression écrite (writing)", "3 writing tasks", "60 minutes"],
+        ["Expression orale (speaking)", "3 tasks with an examiner", "12 minutes"],
+      ] } },
+      { h2: "Scores IRCC treats as NCLC 7" },
+      { table: { head: ["Skill", "TCF Canada score"], rows: [
+        ["Listening", "458 to 502 (out of 699)"],
+        ["Reading", "453 to 498 (out of 699)"],
+        ["Writing", "10 to 11 (out of 20)"],
+        ["Speaking", "10 to 11 (out of 20)"],
+      ] } },
+      { p: "Source: IRCC language test equivalency charts on canada.ca. Check them before you book, since IRCC can update them." },
+      { h2: "What trips people up" },
+      { ul: [
+        "Listening questions get harder as you go, and audio plays once.",
+        "Writing task 3 asks you to compare two viewpoints and give your own: practise structure, not just vocabulary.",
+        "Speaking task 2 is you asking the examiner questions. Most candidates prepare only to answer.",
+        "One skill below NCLC 7 means no French bonus points, however high the other three are.",
+      ] },
+      { tip: "Take a timed full mock at least 3 weeks before your test. Your weakest section, not your average, decides your result." },
+      { cta: { text: "Our NCLC 7 Fast Track is a live French program built around the TCF Canada.", to: "/french-nclc-7", label: "Read NCLC 7 in 7 Points" } },
+    ],
+  },
+  {
+    slug: "french-connectors-cheat-sheet-tcf-writing",
+    title: "French Connectors Cheat Sheet: 30 Linking Words for TCF and TEF Writing",
+    description:
+      "The French connectors (mots de liaison) that lift your writing score: adding, contrasting, giving causes and consequences, concluding, with example sentences.",
+    category: "French",
+    keywords: ["french connectors", "mots de liaison", "tcf writing tips", "french linking words"],
+    date: D,
+    body: [
+      { p: "Examiners reward writing that is organised. Connectors are the fastest way to show it. Learn these by function, and use at least one from each group in every essay." },
+      { h2: "Adding ideas" },
+      { ul: ["de plus (moreover)", "en outre (furthermore)", "également (also)", "d'une part ... d'autre part (on one hand ... on the other)", "non seulement ... mais aussi (not only ... but also)"] },
+      { h2: "Contrasting" },
+      { ul: ["cependant (however)", "pourtant (yet)", "en revanche (on the other hand)", "néanmoins (nevertheless)", "alors que (whereas)", "bien que + subjonctif (although)"] },
+      { h2: "Cause" },
+      { ul: ["parce que (because)", "car (for, since)", "puisque (since, as)", "grâce à (thanks to)", "à cause de (because of, negative)", "étant donné que (given that)"] },
+      { h2: "Consequence" },
+      { ul: ["donc (so)", "par conséquent (consequently)", "c'est pourquoi (that is why)", "ainsi (thus)", "si bien que (so much so that)"] },
+      { h2: "Giving examples and concluding" },
+      { ul: ["par exemple (for example)", "notamment (in particular)", "en effet (indeed)", "en conclusion (in conclusion)", "pour conclure (to conclude)", "en somme (in short)"] },
+      { h2: "Example" },
+      { p: "Le télétravail offre plus de liberté. Cependant, il peut isoler les employés. C'est pourquoi, à mon avis, un modèle hybride est la meilleure solution." },
+      { tip: "Bien que always takes the subjunctive: bien qu'il soit tard, not bien qu'il est tard. Examiners notice." },
+      { cta: { text: "Get your writing marked against the TCF scale in our NCLC 7 Fast Track.", to: "/french-nclc-7", label: "Read NCLC 7 in 7 Points" } },
+    ],
+  },
+  {
+    slug: "express-entry-french-points-cheat-sheet",
+    title: "Express Entry French Points Cheat Sheet: How NCLC 7 Can Add Up to 50 CRS Points",
+    description:
+      "How French adds CRS points in Express Entry: the 25 and 50 point tiers, second official language points, French category draws and what to check before relying on them.",
+    category: "French",
+    keywords: ["express entry french points", "crs points french", "nclc 7 crs points", "french category draw"],
+    date: D,
+    body: [
+      { p: "French is one of the few CRS factors you can still improve after you create your Express Entry profile. Here is how it works, in plain language." },
+      { h2: "Additional points for French" },
+      { table: { head: ["Your French", "Your English", "Additional CRS points"], rows: [
+        ["NCLC 7 or higher in all four skills", "CLB 4 or lower, or no English test", "25"],
+        ["NCLC 7 or higher in all four skills", "CLB 5 or higher in all four skills", "50"],
+      ] } },
+      { p: "These are on top of points for a second official language, which you can earn when your French is at NCLC 5 or above." },
+      { h2: "French category draws" },
+      { p: "IRCC also runs Express Entry draws only for candidates with strong French. In 2026, some of these draws invited candidates with CRS scores below 400, far lower than general draws." },
+      { h2: "Before you rely on it" },
+      { ul: [
+        "All four skills must reach NCLC 7. Three is not enough.",
+        "Use an IRCC approved test: TCF Canada or TEF Canada.",
+        "Results are valid for 2 years from the test date.",
+        "IRCC consulted in 2026 on whether to keep the French bonus points. Check canada.ca for the current rules before you plan around them.",
+      ] },
+      { tip: "Run your CRS score twice in IRCC's official calculator: once as you are, once with NCLC 7 French. The difference tells you exactly what French is worth to you." },
+      { p: "This article is general information, not immigration advice. The Cheat School is not affiliated with IRCC." },
+      { cta: { text: "Our NCLC 7 Fast Track is built for Express Entry candidates.", to: "/french-nclc-7", label: "Read NCLC 7 in 7 Points" } },
+    ],
+  },
+];
+
+export const getArticle = (slug) => ARTICLES.find((a) => a.slug === slug);
+
+export const articleText = (a) =>
+  a.body
+    .map((b) => b.p || b.h2 || b.h3 || b.tip || (b.ul || b.ol || []).join(" ") ||
+      (b.table ? [...b.table.head, ...b.table.rows.flat()].join(" ") : "") || (b.cta?.text ?? ""))
+    .join(" ");
+
+export const readingMinutes = (a) => Math.max(2, Math.round(articleText(a).split(/\s+/).length / 200));
+
+export const ARTICLE_AUTHOR = AUTHOR;

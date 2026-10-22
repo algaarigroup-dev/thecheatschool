@@ -21,7 +21,8 @@ const Navbar = ({ isChatOpen, setIsChatOpen }) => {
 
   const coursesItems = [
   { to: "/civil-engineering", label: "Civil Engineering" },
-  { to: "/ai-engineering", label: "AI Engineering" }];
+  { to: "/ai-engineering", label: "AI Engineering" },
+  { to: "/french-nclc-7", label: "French (NCLC 7)" }];
 
 
   const handleCourseClick = (to) => {

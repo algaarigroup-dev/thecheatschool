@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import CadCursor from "./CadCursor";
 import {
   ChevronDown,
   Instagram,
@@ -6,9 +7,16 @@ import {
   Linkedin,
   MessageCircle } from
 "lucide-react";
-import { GOOGLE_FORM_URL } from "@/utils/google-form-redirect";
+import { CONTACT, whatsappLink } from "@/config/site";
+
+// Parallax offset for a decorative layer: depth in px at the hero's edges.
+const drift = (depth) => ({
+  transform: `translate3d(calc(var(--mx, 0) * ${depth}px), calc(var(--my, 0) * ${depth}px), 0)`,
+  transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)"
+});
 
 const HeroSection = () => {
+  const heroRef = useRef(null);
   const [currentWord, setCurrentWord] = useState(0);
   const words = ["Theory", "Classroom", "Concepts", "Learning"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -28,7 +36,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative min-h-[85vh] md:h-screen mt-26 w-full overflow-visible">
+    <div ref={heroRef} className="relative min-h-[85vh] md:h-screen mt-26 w-full overflow-visible">
       {}
       <div className="absolute inset-0 bg-background dark:bg-background">
         {}
@@ -48,15 +56,15 @@ const HeroSection = () => {
         {}
         <div
           className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary"
-          style={{ opacity: 0.15 }}>
+          style={{ opacity: 0.15, ...drift(-18) }}>
         </div>
         <div
           className="absolute top-1/3 right-1/3 w-48 h-48 bg-primary"
-          style={{ opacity: 0.08 }}>
+          style={{ opacity: 0.08, ...drift(10) }}>
         </div>
         <div
           className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-primary"
-          style={{ opacity: 0.2 }}>
+          style={{ opacity: 0.2, ...drift(-28) }}>
         </div>
 
         {}
@@ -70,28 +78,41 @@ const HeroSection = () => {
         </div>
 
         {}
-        <div className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-5 h-5 rotate-45 bg-primary"></div>
+        <div className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary" style={drift(-40)}></div>
+        <div className="absolute bottom-1/3 right-1/3" style={drift(34)}>
+          <div className="w-5 h-5 rotate-45 bg-primary"></div>
+        </div>
       </div>
+
+      <CadCursor hostRef={heroRef} />
 
       {}
       <div className="absolute right-8 top-1/3 sm:top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20">
         <a
-          href="https://www.instagram.com/thecheatschool/"
+          href={CONTACT.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
           className="text-foreground hover:text-primary transition-colors">
           
           <Instagram size={24} />
         </a>
 
         <a
-          href="https://www.linkedin.com/company/the-cheat-school/posts/?feedView=all"
+          href={CONTACT.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
           className="text-foreground hover:text-primary transition-colors">
           
           <Linkedin size={24} />
         </a>
 
         <a
-          href="#"
+          href={whatsappLink("Hi The Cheat School, I have a question about the bootcamp.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with us on WhatsApp"
           className="text-foreground hover:text-primary transition-colors">
           
           <MessageCircle size={24} />
@@ -109,7 +130,7 @@ const HeroSection = () => {
         {}
         <div className="mt-6 md:mt-28 lg:mt-32">
           <p className="text-foreground/70 text-sm md:text-base tracking-[0.3em] uppercase font-secondary">
-            PROFESSIONAL EXCELLENCE
+            NOT ANOTHER ONLINE COURSE
           </p>
         </div>
 
@@ -137,17 +158,18 @@ const HeroSection = () => {
 
         {}
         <p className="text-foreground/80 text-lg md:text-xl lg:text-2xl font-secondary mb-12 max-w-3xl text-center px-4">
-          From learning to doing. Gain hands-on experience and become
-          industry-ready with practical professional training.
+          Most courses end with a certificate. Ours end with real project work,
+          a public track record and the confidence to talk about it in an interview.
         </p>
 
         {}
         <div className="flex sm:flex-row gap-4 mb-16">
-          <a href={GOOGLE_FORM_URL}>
-            <button className="px-8 py-4 bg-[#e83f25] cursor-pointer text-white font-semibold font-secondary rounded-lg hover:bg-[#d63820] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
-              Enroll & Start Today <ArrowRight className="inline-block" />
-            </button>
-          </a>
+          <button
+            type="button"
+            onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+            className="px-8 py-4 bg-[#e83f25] cursor-pointer text-white font-semibold font-secondary rounded-lg hover:bg-[#d63820] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+            See How We're Different <ArrowRight className="inline-block" />
+          </button>
         </div>
 
         {}
@@ -157,16 +179,16 @@ const HeroSection = () => {
               90 Days
             </p>
             <p className="text-foreground/70 text-sm md:text-base font-secondary tracking-wide">
-              Job-Ready Transform
+              Classroom to Job Ready
             </p>
           </div>
           <div className="hidden sm:block w-px bg-foreground/20"></div>
           <div>
             <p className="text-foreground text-3xl md:text-4xl font-bold font-primary mb-1">
-              3+
+              Live
             </p>
             <p className="text-foreground/70 text-sm md:text-base font-secondary tracking-wide">
-              Live Projects
+              Projects, Not Lectures
             </p>
           </div>
           <div className="hidden sm:block w-px bg-foreground/20"></div>

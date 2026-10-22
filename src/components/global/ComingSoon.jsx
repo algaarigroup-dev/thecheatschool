@@ -8,7 +8,7 @@ import Loader from "./Loader";
 import { notifyMeSchema, useSubmitNotifyMe } from "../../services/useNotifyMeMutations";
 
 export default function ComingSoon() {
-  const { mutate, isLoading: isSubmitting } = useSubmitNotifyMe();
+  const { mutate, isPending: isSubmitting } = useSubmitNotifyMe();
   const [submitted, setSubmitted] = useState(false);
 
   const {
@@ -27,9 +27,12 @@ export default function ComingSoon() {
 
   const onSubmit = (data) => {
     mutate(data, {
-      onSuccess: () => {
+      onSuccess: (res) => {
         setSubmitted(true);
-        toast.success("Thanks! We'll notify you when new courses launch.", {
+        const msg = res?.channel === "whatsapp"
+          ? "WhatsApp opened with your details. Press send there and we'll notify you at launch."
+          : "Thanks! We'll notify you when new courses launch.";
+        toast.success(msg, {
           duration: 5000,
           style: {
             background: "#10B981",

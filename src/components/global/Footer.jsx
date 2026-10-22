@@ -12,6 +12,7 @@ import {
 "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { CONTACT, whatsappLink, LEGAL_READY, REFUND_READY } from "@/config/site";
 
 const Footer = () => {
   return (
@@ -29,19 +30,28 @@ const Footer = () => {
 
           <div className="flex gap-4 mt-4">
             <a
-              href="https://www.instagram.com/thecheatschool/"
+              href={CONTACT.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
               className="text-white hover:text-primary transition-colors">
               
               <Instagram size={24} />
             </a>
             <a
-              href="https://www.linkedin.com/company/the-cheat-school/posts/?feedView=all"
+              href={CONTACT.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="text-white hover:text-primary transition-colors">
               
               <Linkedin size={24} />
             </a>
             <a
-              href="#"
+              href={whatsappLink("Hi The Cheat School, I have a question about the bootcamp.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with us on WhatsApp"
               className="text-white hover:text-primary transition-colors">
               
               <MessageCircle size={24} />
@@ -56,9 +66,16 @@ const Footer = () => {
           <ul className="space-y-2 font-primary">
             {[
             { name: "Home", path: "/" },
+            { name: "Civil Cheatcamp", path: "/civil-engineering" },
+            { name: "French (NCLC 7)", path: "/french-nclc-7" },
             { name: "Blogs", path: "/blogs" },
+            { name: "Events", path: "/events" },
             { name: "Contact Us", path: "/contact-us" },
-            { name: "Events", path: "/events" }].
+            ...(LEGAL_READY ? [
+              { name: "Terms of Service", path: "/terms" },
+              { name: "Privacy Policy", path: "/privacy" }] :
+            []),
+            ...(REFUND_READY ? [{ name: "Refund Policy", path: "/refund-policy" }] : [])].
             map((link) =>
             <li key={link.name}>
                 <NavLink
@@ -79,16 +96,16 @@ const Footer = () => {
 
           <div className="flex items-center gap-2 mb-2">
             <Phone className="text-primary w-5 h-5" />
-            <p className="text-gray-300 text-[15px] font-teritiary">
-              +91 99895 20942
-            </p>
+            <a href={`tel:+${CONTACT.phoneE164}`} className="text-gray-300 text-[15px] font-teritiary hover:text-primary">
+              {CONTACT.phoneDisplay}
+            </a>
           </div>
 
           <div className="flex items-center gap-2 mb-4">
             <Mail className="text-primary w-5 h-5" />
-            <p className="text-gray-300 text-[15px] font-teritiary">
-              thecheatschool@gmail.com
-            </p>
+            <a href={`mailto:${CONTACT.email}`} className="text-gray-300 text-[15px] font-teritiary hover:text-primary">
+              {CONTACT.email}
+            </a>
           </div>
 
           <p className="text-gray-400 text-sm font-teritiary">
