@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { CONTACT } from "@/config/site";
 
 const CTA = () => {
   return (
@@ -14,12 +15,14 @@ const CTA = () => {
                 </h2>
 
                 <p className="font-medium text-white/90 md:text-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-                  Start your journey from student to industry professional in just 90 days. Limited seats available for next batch.
+                  Start your journey from student to industry professional in 90 days. Join the community to hear first when the next batch opens.
                 </p>
 
                 <div className="pt-2">
                   <a
-                    href="https://chat.whatsapp.com/G3T2EfQN9pAJ3yGwsRBXcD "
+                    href={CONTACT.whatsappCommunity}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-white text-[#e83f25] px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
                     style={{ fontFamily: 'Inter, sans-serif' }}>
                     

@@ -37,9 +37,9 @@ const AboutUs = () => {
             className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4"
             style={{ fontFamily: "Inter, sans-serif" }}>
             
-            India's first comprehensive professional bootcamp that transforms
-            students into industry-ready professionals in just 90 days with
-            hands-on projects and personalized coaching.
+            A 90 day professional bootcamp that turns engineering students
+            into industry ready professionals through hands on projects,
+            live classes and personal coaching.
           </p>
         </div>
 
@@ -50,13 +50,13 @@ const AboutUs = () => {
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-gray-900"
               style={{ fontFamily: "Antonio, sans-serif" }}>
               
-              2-4 Hrs/Day
+              3 Hrs/Day
             </div>
             <div
               className="text-xs sm:text-sm text-gray-600"
               style={{ fontFamily: "Inter, sans-serif" }}>
               
-              Flexible Schedule
+              2 PM to 5 PM IST
             </div>
           </div>
 
@@ -65,13 +65,13 @@ const AboutUs = () => {
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-gray-900"
               style={{ fontFamily: "Antonio, sans-serif" }}>
               
-              5 Days/Week
+              Sun to Thu
             </div>
             <div
               className="text-xs sm:text-sm text-gray-600"
               style={{ fontFamily: "Inter, sans-serif" }}>
               
-              Weekend Free
+              Fri &amp; Sat Off
             </div>
           </div>
 
@@ -80,13 +80,13 @@ const AboutUs = () => {
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-gray-900"
               style={{ fontFamily: "Antonio, sans-serif" }}>
               
-              Certified
+              Certificate
             </div>
             <div
               className="text-xs sm:text-sm text-gray-600"
               style={{ fontFamily: "Inter, sans-serif" }}>
               
-              Industry Certified
+              On Completion
             </div>
           </div>
         </div>
@@ -218,7 +218,7 @@ const AboutUs = () => {
                   style={{ fontFamily: "Inter, sans-serif" }}>
                   
                   Graduate with a complete professional portfolio, project
-                  deliverables, and industry certifications.
+                  deliverables, and a certificate of completion.
                 </p>
               </div>
             </div>

@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import toast, { Toaster } from 'react-hot-toast';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
-import { GOOGLE_FORM_URL } from '../utils/google-form-redirect';
+import { GOOGLE_FORM_URL, CONTACT } from '@/config/site';
 import { contactSchema, useSubmitContact } from '../services/useContactMutations';
 import Loader from '../components/global/Loader';
 
 const ContactUsPage = () => {
-  const { mutate, isLoading: isSubmitting } = useSubmitContact();
+  const { mutate, isPending: isSubmitting } = useSubmitContact();
 
   const {
     register,
@@ -34,8 +34,11 @@ const ContactUsPage = () => {
 
   const onSubmit = (data) => {
     mutate(data, {
-      onSuccess: () => {
-        toast.success("Message sent successfully! We'll get back to you soon.", {
+      onSuccess: (res) => {
+        const msg = res?.channel === 'whatsapp'
+          ? 'WhatsApp opened with your details. Press send there to complete your registration.'
+          : "Registration received! We'll get back to you soon.";
+        toast.success(msg, {
           duration: 5000,
           style: {
             background: '#10B981',
@@ -134,7 +137,7 @@ const ContactUsPage = () => {
                 type="tel"
                 placeholder="Phone Number (WhatsApp Preferred) *"
                 {...register('phoneNumber')}
-                maxLength={10}
+                maxLength={20}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               
               {errors.phoneNumber &&
@@ -233,7 +236,7 @@ const ContactUsPage = () => {
                   <div className="w-5">
                     <Loader />
                   </div>
-                  Sending... (may take up to 60s)
+                  Sending...
                 </> :
 
               'Submit'
@@ -250,24 +253,16 @@ const ContactUsPage = () => {
             <h3 className="font-primary text-primary text-2xl flex items-center gap-2 mb-3">
               <Phone size={24} /> Phone
             </h3>
-            <p className="text-lg font-teritiary mb-6">+91 99895 20942</p>
+            <p className="text-lg font-teritiary mb-6">
+              <a href={`tel:+${CONTACT.phoneE164}`} className="hover:text-primary">{CONTACT.phoneDisplay}</a>
+            </p>
             
             <h3 className="font-primary text-primary text-2xl flex items-center gap-2 mb-3">
               <Mail size={24} /> Email
             </h3>
-            <p className="text-lg font-teritiary">team@thecheatschool.com</p>
-          </div>
-
-          {}
-          <div className="w-full rounded-sm overflow-hidden border border-black shadow-md">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6459481240995!2d78.43980667462785!3d17.428770701612788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97113de30677%3A0x3c947d8d02f0cad2!2sEmiratiyo%20Investments%20I%20Dubai%20property%20investments%20I%20Property%20asset%20management%20Dubai%20I%20Luxury%20property%20investment%20Dubai!5e0!3m2!1sen!2sin!4v1763150303208!5m2!1sen!2sin"
-              width="100%"
-              height="300"
-              loading="lazy"
-              className="block"
-              title="Location Map">
-            </iframe>
+            <p className="text-lg font-teritiary">
+              <a href={`mailto:${CONTACT.email}`} className="hover:text-primary">{CONTACT.email}</a>
+            </p>
           </div>
         </div>
       </div>

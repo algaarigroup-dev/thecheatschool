@@ -1,1 +1,1 @@
-export const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/1scvsMHo5aHqM4sqUaatsb0cxmCEqV179kPoi2OvpkW8/viewform?pli=1&pli=1&edit_requested=true#responses";
+export { GOOGLE_FORM_URL } from "@/config/site";

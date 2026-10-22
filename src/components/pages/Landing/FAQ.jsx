@@ -17,19 +17,19 @@ const Faq = () => {
   const items = [
   {
     question: "What courses do you offer?",
-    answer: "We offer comprehensive courses across multiple disciplines including Civil Engineering, AI & Machine Learning, and more. All courses are designed by industry experts with hands-on projects."
+    answer: "Admissions are open for the Civil Cheatcamp, our 90 day civil engineering bootcamp covering AutoCAD, Revit, project management, quantity surveying and AI in construction. Our AI Engineering bootcamp is launching soon; you can register your interest on its page."
   },
   {
-    question: "How long is the free trial period?",
-    answer: "You get a 7-day free trial with full access to all courses and materials. No credit card required to start your trial."
+    question: "What is the weekly schedule?",
+    answer: "Live classes run Sunday to Thursday, 2 PM to 4 PM IST, followed by a short daily reflection video. Friday and Saturday are off, or available for catch up. You also get weekly coach feedback."
   },
   {
-    question: "Are the courses suitable for beginners?",
-    answer: "Yes! Our courses cater to all levels - from undergraduate students to practicing professionals looking to upskill. Each course clearly indicates its difficulty level."
+    question: "Is it suitable for beginners?",
+    answer: "Yes. The Civil Cheatcamp starts from the basics and is built for engineering students in any year. No prior software experience is needed."
   },
   {
     question: "Do I get a certificate upon completion?",
-    answer: "Absolutely! Upon successfully completing a course, you'll receive a verified certificate that you can share on LinkedIn and add to your professional portfolio."
+    answer: "Yes. When you complete all assignments and deliverables, you receive a Cheat School certificate of completion that you can share on LinkedIn and add to your portfolio."
   }];
 
 

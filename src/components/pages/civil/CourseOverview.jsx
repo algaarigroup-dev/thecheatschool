@@ -11,7 +11,7 @@ import {
   FileText,
   Award } from
 "lucide-react";
-import { GOOGLE_FORM_URL } from "@/utils/google-form-redirect";
+import { GOOGLE_FORM_URL, NEXT_BATCH_DATE } from "@/config/site";
 
 const CourseOverview = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -22,7 +22,7 @@ const CourseOverview = () => {
     number: "90",
     unit: "DAYS",
     title: "Intensive Program",
-    description: "Sunday-Thursday structured learning path",
+    description: "Sunday to Thursday structured learning path",
     gradient: "from-primary to-red-600"
   },
   {
@@ -30,7 +30,7 @@ const CourseOverview = () => {
     number: "2-4",
     unit: "PM",
     title: "Daily Classes",
-    description: "Live sessions with industry experts",
+    description: "Live sessions, 2 PM to 4 PM IST",
     gradient: "from-secondary to-gray-800"
   },
   {
@@ -86,9 +86,9 @@ const CourseOverview = () => {
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
                 <p className="text-muted-foreground font-secondary">
-                  Starting Soon
+                  {NEXT_BATCH_DATE ? `Starts ${NEXT_BATCH_DATE}` : "Admissions open"}
                 </p>
-                <a href={`${GOOGLE_FORM_URL}`}>
+                <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
                   <button className="w-full cursor-pointer bg-primary text-white py-4 rounded-xl font-primary font-bold hover:bg-[#d63620] transition-colors duration-300 flex items-center justify-center gap-2 group">
                     Join the Course Now
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -172,10 +172,10 @@ const CourseOverview = () => {
 
               <div className="space-y-3">
                 {[
-                { day: "Sun-Thu", time: "2-4 PM", activity: "Live Classes" },
+                { day: "Sun to Thu", time: "2 to 4 PM IST", activity: "Live Classes" },
                 {
                   day: "Daily",
-                  time: "4-5 PM",
+                  time: "4 to 5 PM IST",
                   activity: "Reflection Videos"
                 },
                 {

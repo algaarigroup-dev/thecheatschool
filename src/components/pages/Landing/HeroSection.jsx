@@ -6,7 +6,7 @@ import {
   Linkedin,
   MessageCircle } from
 "lucide-react";
-import { GOOGLE_FORM_URL } from "@/utils/google-form-redirect";
+import { GOOGLE_FORM_URL, CONTACT, whatsappLink } from "@/config/site";
 
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -77,21 +77,30 @@ const HeroSection = () => {
       {}
       <div className="absolute right-8 top-1/3 sm:top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20">
         <a
-          href="https://www.instagram.com/thecheatschool/"
+          href={CONTACT.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
           className="text-foreground hover:text-primary transition-colors">
           
           <Instagram size={24} />
         </a>
 
         <a
-          href="https://www.linkedin.com/company/the-cheat-school/posts/?feedView=all"
+          href={CONTACT.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
           className="text-foreground hover:text-primary transition-colors">
           
           <Linkedin size={24} />
         </a>
 
         <a
-          href="#"
+          href={whatsappLink("Hi The Cheat School, I have a question about the bootcamp.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with us on WhatsApp"
           className="text-foreground hover:text-primary transition-colors">
           
           <MessageCircle size={24} />
@@ -143,7 +152,7 @@ const HeroSection = () => {
 
         {}
         <div className="flex sm:flex-row gap-4 mb-16">
-          <a href={GOOGLE_FORM_URL}>
+          <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
             <button className="px-8 py-4 bg-[#e83f25] cursor-pointer text-white font-semibold font-secondary rounded-lg hover:bg-[#d63820] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
               Enroll & Start Today <ArrowRight className="inline-block" />
             </button>

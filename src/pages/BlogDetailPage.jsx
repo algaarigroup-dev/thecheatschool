@@ -6,10 +6,25 @@ import PortableText from 'react-portable-text';
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import Loader from '../components/global/Loader';
 import ErrorDisplay from '../components/global/ErrorDisplay';
+import usePageMeta from '../hooks/usePageMeta';
 
 const BlogDetailPage = () => {
   const { slug } = useParams();
   const { data: blog, isLoading, isError, error } = useGetBlogBySlug(slug);
+
+  const excerpt = Array.isArray(blog?.body)
+    ? blog.body
+        .filter((b) => b?._type === 'block')
+        .map((b) => (b.children || []).map((c) => c.text).join(''))
+        .join(' ')
+        .slice(0, 155)
+    : undefined;
+  usePageMeta({
+    title: blog?.title ? `${blog.title} | The Cheat School` : 'Blog | The Cheat School',
+    description: excerpt,
+    path: `/blogs/${slug}`,
+    image: blog?.mainImage ? urlFor(blog.mainImage) : undefined
+  });
 
   if (isLoading) {
     return (
