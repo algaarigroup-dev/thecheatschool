@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
 const Events = lazy(() => import("./pages/EventsPage"));
 const Gallery = lazy(() => import("./pages/GalleryPage"));
@@ -12,7 +12,10 @@ const CivilEngineering = lazy(() => import("./pages/CivilEngineering"));
 const AiCourses = lazy(() => import("./pages/AiEngineering"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 
-const router = createBrowserRouter([
+// Hash routing is used only for the hosted preview build (VITE_PREVIEW=1).
+const createRouter = import.meta.env.VITE_PREVIEW ? createHashRouter : createBrowserRouter;
+
+const router = createRouter([
 {
   path: "/",
   element: <Layout />,

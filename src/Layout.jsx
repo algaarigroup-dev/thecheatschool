@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import Loader from './components/global/Loader';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
 import Navbar from './components/global/Navbar';
 import Footer from './components/global/Footer';
 import usePageMeta from './hooks/usePageMeta';
@@ -28,6 +28,7 @@ const Layout = () => {
   return (
     <div>
       <RouteMeta />
+      <ScrollRestoration />
       <Navbar isChatOpen={isChatOpen} setIsChatOpen={setIsChatOpen} />
       <main>
         <Suspense

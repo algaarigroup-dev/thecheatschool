@@ -157,7 +157,7 @@ const AboutUs = () => {
             <div className="flex justify-center">
               <div className="min-w-[320px] min-h-[320px] sm:min-w-[400px] sm:min-h-[400px] md:min-w-[500px] md:min-h-[500px]">
                 <img
-                  src="/pt-3.png"
+                  src={`${import.meta.env.BASE_URL}pt-3.png`}
                   alt="Professional Training Education"
                   className="w-full h-full max-w-full max-h-full object-contain" />
                 
