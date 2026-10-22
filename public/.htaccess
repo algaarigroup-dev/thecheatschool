@@ -1,6 +1,10 @@
 # Single page app routing for Apache / LiteSpeed hosting (Hostinger, cPanel).
 # Without this, opening any link other than the homepage directly returns the
 # host's 404 page, because the server looks for a real file at that path.
+# /blogs is both a page (blogs.html) and a folder of articles (blogs/*.html).
+# Stop Apache adding a slash to folder URLs so /blogs serves the page.
+DirectorySlash Off
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -10,7 +14,6 @@
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Drop trailing slashes (except the homepage) so each page has one URL
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/$ /$1 [L,R=301]
 
   # Serve real files as they are (assets, images, sitemap)

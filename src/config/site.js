@@ -13,7 +13,7 @@ export const SITE = {
 export const CONTACT = {
   phoneDisplay: "+91 99895 20942",
   phoneE164: "919989520942", // used for WhatsApp links (country code, no plus)
-  email: "team@thecheatschool.com",
+  email: "help@thecheatschool.in",
   whatsappCommunity: "https://chat.whatsapp.com/G3T2EfQN9pAJ3yGwsRBXcD",
   instagram: "https://www.instagram.com/thecheatschool/",
   linkedin: "https://www.linkedin.com/company/the-cheat-school/",

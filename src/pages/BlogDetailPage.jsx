@@ -7,18 +7,19 @@ import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import Loader from '../components/global/Loader';
 import ErrorDisplay from '../components/global/ErrorDisplay';
 import usePageMeta from '../hooks/usePageMeta';
+import ArticleBody from '../content/ArticleBody';
 
 const BlogDetailPage = () => {
   const { slug } = useParams();
   const { data: blog, isLoading, isError, error } = useGetBlogBySlug(slug);
 
-  const excerpt = Array.isArray(blog?.body)
+  const excerpt = blog?.description || (Array.isArray(blog?.body)
     ? blog.body
         .filter((b) => b?._type === 'block')
         .map((b) => (b.children || []).map((c) => c.text).join(''))
         .join(' ')
         .slice(0, 155)
-    : undefined;
+    : undefined);
   usePageMeta({
     title: blog?.title ? `${blog.title} | The Cheat School` : 'Blog | The Cheat School',
     description: excerpt,
@@ -56,7 +57,9 @@ const BlogDetailPage = () => {
 
   }
 
-  const readingTime = blog.body ? Math.ceil(JSON.stringify(blog.body).length / 1000) : 5;
+  const readingTime = blog.local
+    ? Math.max(2, Math.round(JSON.stringify(blog.blocks).split(/\s+/).length / 200))
+    : blog.body ? Math.ceil(JSON.stringify(blog.body).length / 1000) : 5;
 
   return (
     <div className="min-h-screen bg-dark-grey">
@@ -128,7 +131,8 @@ const BlogDetailPage = () => {
 
         {}
         <div className="prose prose-lg max-w-none font-secondary text-foreground">
-          {blog.body &&
+          {blog.local && <ArticleBody blocks={blog.blocks} />}
+          {!blog.local && blog.body &&
           <PortableText
             content={blog.body}
             serializers={{

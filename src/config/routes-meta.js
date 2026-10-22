@@ -22,9 +22,9 @@ export const ROUTES_META = {
       "Reach NCLC 7 in French for Express Entry: the TCF Canada scores you need, why it can add up to 50 CRS points, and how our live, exam focused NCLC 7 Fast Track works.",
   },
   "/blogs": {
-    title: "Blog | The Cheat School",
+    title: "Cheat Sheets for Engineering Students & French Learners | The Cheat School",
     description:
-      "Articles on employability, internships and the gap between engineering college and real industry work.",
+      "Free cheat sheets: AutoCAD and Revit shortcuts, BOQ formulas, CPM scheduling, interview questions, resume and LinkedIn checklists, TCF Canada and Express Entry French points.",
   },
   "/events": {
     title: "Events & Webinars | The Cheat School",

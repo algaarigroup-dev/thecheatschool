@@ -1,8 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_BASE_URL, sanityClient, USE_BACKEND } from './api';
+import { ARTICLES, getArticle, ARTICLE_AUTHOR } from '@/content/articles';
 
-const getAllBlogs = async () => {
+// Local cheat sheet articles shaped like CMS posts so the pages can list them together.
+const toPost = (a) => ({
+  _id: `local-${a.slug}`,
+  local: true,
+  title: a.title,
+  slug: { current: a.slug },
+  publishedAt: a.date,
+  author: { name: ARTICLE_AUTHOR },
+  excerpt: a.description,
+  description: a.description,
+  category: a.category,
+  blocks: a.body
+});
+const LOCAL_POSTS = ARTICLES.map(toPost);
+
+const getRemoteBlogs = async () => {
   if (USE_BACKEND === 'sanity') {
 
     const query = `*[_type == "post"] | order(publishedAt desc) {
@@ -25,7 +41,20 @@ const getAllBlogs = async () => {
   }
 };
 
-const getBlogBySlug = async (slug) => {
+// Local articles always show, even if the CMS is unreachable.
+const getAllBlogs = async () => {
+  let remote = [];
+  try {
+    remote = (await getRemoteBlogs()) || [];
+  } catch (e) {
+    console.error('Blog CMS unavailable, showing built in articles only', e);
+  }
+  return [...LOCAL_POSTS, ...remote].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  );
+};
+
+const getRemoteBlogBySlug = async (slug) => {
   if (USE_BACKEND === 'sanity') {
     console.log('📡 Fetching blog by slug from SANITY DIRECT API:', slug);
     const query = `*[_type == "post" && slug.current == $slug][0] {
@@ -49,10 +78,22 @@ const getBlogBySlug = async (slug) => {
 };
 
 
+const getBlogBySlug = async (slug) => {
+  const local = getArticle(slug);
+  if (local) return toPost(local);
+  return getRemoteBlogBySlug(slug);
+};
+
+const LOCAL_SORTED = [...LOCAL_POSTS].sort(
+  (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+);
+
 export const useGetAllBlogs = () => {
   return useQuery({
     queryKey: ['blogs', 'list'],
     queryFn: getAllBlogs,
+    // Show built in articles instantly; CMS posts merge in when they arrive.
+    placeholderData: LOCAL_SORTED,
     staleTime: 5 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
     refetchOnWindowFocus: false,

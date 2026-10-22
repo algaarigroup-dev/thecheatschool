@@ -34,8 +34,11 @@ const BlogsPage = () => {
         {}
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl mt-19 font-primary font-bold text-foreground mb-4">
-            Our Blogs
+            Cheat Sheets &amp; Articles
           </h1>
+          <p className="text-lg text-muted-foreground font-secondary max-w-2xl mb-4">
+            Shortcuts, formulas and checklists for engineering students and French learners. Free, practical and fact checked.
+          </p>
           <div className="w-24 h-1 bg-primary"></div>
         </div>
 
@@ -78,9 +81,12 @@ const BlogsPage = () => {
                 </div>
 
                 {}
-                {blog.body && blog.body[0]?.children?.[0]?.text &&
+                {blog.category &&
+              <p className="text-xs uppercase tracking-[0.2em] text-primary font-secondary font-semibold mb-2">{blog.category}</p>
+              }
+                {(blog.excerpt || blog.body?.[0]?.children?.[0]?.text) &&
               <p className="text-muted-foreground font-secondary mb-6 line-clamp-3">
-                    {blog.body[0].children[0].text}
+                    {blog.excerpt || blog.body[0].children[0].text}
                   </p>
               }
 

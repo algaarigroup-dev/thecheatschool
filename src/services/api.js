@@ -13,7 +13,9 @@ export const sanityClient = createClient({
   projectId: '4x6wdy47',
   dataset: 'production',
   useCdn: true,
-  apiVersion: '2024-01-01'
+  apiVersion: '2024-01-01',
+  timeout: 10000,
+  maxRetries: 1
 });
 
 export const builder = imageUrlBuilder(sanityClient);
