@@ -135,11 +135,12 @@ const FrenchNclc7 = () => {
                 className="px-7 py-4 bg-primary text-white font-semibold font-secondary rounded-lg hover:bg-[#d63820] transition-colors inline-flex items-center gap-2">
                 Ask About the Next Batch <ArrowRight className="w-5 h-5" />
               </a>
-              <a
-                href="#point-1"
-                className="px-7 py-4 border border-black text-foreground bg-background font-semibold font-secondary rounded-lg hover:-translate-y-0.5 transition-transform">
+              <button
+                type="button"
+                onClick={() => document.getElementById("point-1")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                className="px-7 py-4 border border-black text-foreground bg-background font-semibold font-secondary rounded-lg hover:-translate-y-0.5 transition-transform cursor-pointer">
                 Read the 7 Points
-              </a>
+              </button>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-px bg-black border border-black rounded-sm overflow-hidden shadow-md">
