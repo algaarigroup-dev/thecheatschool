@@ -21,7 +21,7 @@ const Faq = () => {
   },
   {
     question: "What courses do you offer?",
-    answer: "Admissions are open for the Civil Cheatcamp, our 90 day civil engineering bootcamp covering AutoCAD, Revit, project management, quantity surveying and AI in construction. Our AI Engineering bootcamp is launching soon; you can register your interest on its page."
+    answer: "The Civil Cheatcamp, our 90 day civil engineering bootcamp, and the NCLC 7 Fast Track, a live French program for Express Entry candidates targeting NCLC 7 on the TCF Canada. Our AI Engineering bootcamp is launching soon; you can register your interest on its page."
   },
   {
     question: "What is the weekly schedule?",

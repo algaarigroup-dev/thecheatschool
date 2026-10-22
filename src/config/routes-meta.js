@@ -16,6 +16,11 @@ export const ROUTES_META = {
     description:
       "Our AI Engineering bootcamp is launching soon. Get notified when admissions open.",
   },
+  "/french-nclc-7": {
+    title: "NCLC 7 in 7 Points | French for Express Entry | The Cheat School",
+    description:
+      "Reach NCLC 7 in French for Express Entry: the TCF Canada scores you need, why it can add up to 50 CRS points, and how our live, exam focused NCLC 7 Fast Track works.",
+  },
   "/blogs": {
     title: "Blog | The Cheat School",
     description:

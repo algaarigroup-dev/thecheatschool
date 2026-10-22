@@ -11,6 +11,7 @@ import NotFound from "./pages/not-found";
 const CivilEngineering = lazy(() => import("./pages/CivilEngineering"));
 const AiCourses = lazy(() => import("./pages/AiEngineering"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
+const FrenchNclc7 = lazy(() => import("./pages/FrenchNclc7"));
 
 // Hash routing is used only for the hosted preview build (VITE_PREVIEW=1).
 const createRouter = import.meta.env.VITE_PREVIEW ? createHashRouter : createBrowserRouter;
@@ -53,6 +54,7 @@ const router = createRouter([
     path: "ai-engineering",
     element: <AiCourses />
   },
+  { path: "french-nclc-7", element: <FrenchNclc7 /> },
   { path: "terms", element: <LegalPage doc="terms" /> },
   { path: "privacy", element: <LegalPage doc="privacy" /> },
   { path: "refund-policy", element: <LegalPage doc="refund-policy" /> }]

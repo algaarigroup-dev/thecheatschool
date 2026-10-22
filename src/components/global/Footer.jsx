@@ -67,6 +67,7 @@ const Footer = () => {
             {[
             { name: "Home", path: "/" },
             { name: "Civil Cheatcamp", path: "/civil-engineering" },
+            { name: "French (NCLC 7)", path: "/french-nclc-7" },
             { name: "Blogs", path: "/blogs" },
             { name: "Events", path: "/events" },
             { name: "Contact Us", path: "/contact-us" },
