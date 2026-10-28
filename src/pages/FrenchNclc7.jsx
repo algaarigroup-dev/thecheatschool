@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import VoiceWave from "@/components/pages/french/VoiceWave";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import NclcChecker from "@/components/pages/french/NclcChecker";
+import PointsRail from "@/components/pages/french/PointsRail";
+import { ArrowRight, MessageCircle, Gauge } from "lucide-react";
 import { FRENCH } from "@/config/site";
 
 // French NCLC 7 program page: "NCLC 7 in 7 Points".
@@ -22,6 +24,7 @@ const tcfScores = [
 const points = [
   {
     n: 1,
+    short: "What NCLC 7 is",
     title: "NCLC 7 is Canada's French benchmark that counts",
     body: (
       <>
@@ -45,6 +48,7 @@ const points = [
   },
   {
     n: 2,
+    short: "Up to 50 CRS points",
     title: "It can be worth up to 50 extra CRS points",
     body: (
       <p>
@@ -57,6 +61,7 @@ const points = [
   },
   {
     n: 3,
+    short: "All four skills",
     title: "All four skills, or it doesn't count",
     body: (
       <p>
@@ -68,6 +73,7 @@ const points = [
   },
   {
     n: 4,
+    short: "Live classes",
     title: "Live classes with a teacher, not an app",
     body: (
       <p>
@@ -79,6 +85,7 @@ const points = [
   },
   {
     n: 5,
+    short: "Built for the TCF",
     title: "Built around the TCF Canada",
     body: (
       <p>
@@ -90,6 +97,7 @@ const points = [
   },
   {
     n: 6,
+    short: "Accountability",
     title: "Accountability, the Cheat School way",
     body: (
       <p>
@@ -101,6 +109,7 @@ const points = [
   },
   {
     n: 7,
+    short: "One package",
     title: "One package, one goal",
     body: (
       <p>
@@ -145,6 +154,12 @@ const FrenchNclc7 = () => {
                 Read the 7 Points
               </button>
             </div>
+            <button
+              type="button"
+              onClick={() => document.getElementById("nclc-checker")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              className="mt-5 inline-flex items-center gap-2 text-sm font-secondary font-semibold text-foreground/80 hover:text-primary underline underline-offset-4 decoration-primary/40 cursor-pointer">
+              <Gauge className="w-4 h-4" /> Already have TCF or mock scores? Check your NCLC level
+            </button>
           </div>
           <div className="grid grid-cols-2 gap-px bg-black border border-black rounded-sm overflow-hidden shadow-md">
             {[
@@ -164,7 +179,8 @@ const FrenchNclc7 = () => {
 
       {/* The 7 points */}
       <section className="py-16 md:py-24 px-4 sm:px-6 bg-background">
-        <ol className="max-w-4xl mx-auto flex flex-col">
+        <PointsRail points={points} />
+        <ol id="seven-points" className="max-w-4xl mx-auto flex flex-col">
           {points.map((p) => (
             <li
               key={p.n}
@@ -184,8 +200,10 @@ const FrenchNclc7 = () => {
         </ol>
       </section>
 
+      <NclcChecker whatsappE164={FRENCH.whatsappE164} />
+
       {/* CTA */}
-      <section className="px-4 sm:px-6 pb-16">
+      <section className="px-4 sm:px-6 pt-16 pb-16">
         <div className="max-w-4xl mx-auto bg-primary text-white rounded-xl p-8 md:p-12 flex flex-col md:flex-row md:items-center gap-6 justify-between">
           <div>
             <h2 className="font-primary text-3xl md:text-4xl font-bold">Ready to start?</h2>
