@@ -416,7 +416,7 @@ export const ARTICLES = [
         "One skill below NCLC 7 means no French bonus points, however high the other three are.",
       ] },
       { tip: "Take a timed full mock at least 3 weeks before your test. Your weakest section, not your average, decides your result." },
-      { cta: { text: "Our NCLC 7 Fast Track is a live French program built around the TCF Canada.", to: "/french-nclc-7", label: "Read NCLC 7 in 7 Points" } },
+      { cta: { text: "Our NCLC 7 Fast Track is a live French program built around the TCF Canada.", to: "/french-nclc-7", label: "See NCLC 7 in 7 Months" } },
     ],
   },
   {
@@ -442,7 +442,7 @@ export const ARTICLES = [
       { h2: "Example" },
       { p: "Le télétravail offre plus de liberté. Cependant, il peut isoler les employés. C'est pourquoi, à mon avis, un modèle hybride est la meilleure solution." },
       { tip: "Bien que always takes the subjunctive: bien qu'il soit tard, not bien qu'il est tard. Examiners notice." },
-      { cta: { text: "Get your writing marked against the TCF scale in our NCLC 7 Fast Track.", to: "/french-nclc-7", label: "Read NCLC 7 in 7 Points" } },
+      { cta: { text: "Get your writing marked against the TCF scale in our NCLC 7 Fast Track.", to: "/french-nclc-7", label: "See NCLC 7 in 7 Months" } },
     ],
   },
   {
@@ -472,7 +472,7 @@ export const ARTICLES = [
       ] },
       { tip: "Run your CRS score twice in IRCC's official calculator: once as you are, once with NCLC 7 French. The difference tells you exactly what French is worth to you." },
       { p: "This article is general information, not immigration advice. The Cheat School is not affiliated with IRCC." },
-      { cta: { text: "Our NCLC 7 Fast Track is built for Express Entry candidates.", to: "/french-nclc-7", label: "Read NCLC 7 in 7 Points" } },
+      { cta: { text: "Our NCLC 7 Fast Track is built for Express Entry candidates.", to: "/french-nclc-7", label: "See NCLC 7 in 7 Months" } },
     ],
   },
 ];

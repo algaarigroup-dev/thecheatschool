@@ -5,7 +5,7 @@ import PointsRail from "@/components/pages/french/PointsRail";
 import { ArrowRight, MessageCircle, Gauge } from "lucide-react";
 import { FRENCH } from "@/config/site";
 
-// French NCLC 7 program page: "NCLC 7 in 7 Points".
+// French NCLC 7 program page: "NCLC 7 in 7 Months".
 // Immigration facts below were checked against IRCC's published
 // TCF Canada equivalency chart; keep FRENCH.factsCheckedOn current.
 
@@ -133,11 +133,11 @@ const FrenchNclc7 = () => {
               French for Express Entry
             </p>
             <h1 className="font-primary font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">
-              NCLC <span className="text-primary">7</span> in 7 Points
+              NCLC <span className="text-primary">7</span> in 7 Months
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/80 font-secondary max-w-xl">
-              Everything you need to know about reaching NCLC 7 in French, and how our{" "}
-              {FRENCH.programName} gets you there.
+              Our {FRENCH.programName} is a structured 7 month plan to reach NCLC 7 in all four
+              TCF Canada skills. Here is what that means, and how we get you there.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
@@ -165,7 +165,7 @@ const FrenchNclc7 = () => {
             {[
               ["Up to 50", "extra CRS points"],
               ["4 of 4", "skills at NCLC 7"],
-              ["Live", "instructor led classes"],
+              ["7 months", "structured plan"],
               [FRENCH.nextBatch || "Now", FRENCH.nextBatch ? "next batch" : "enrolling"],
             ].map(([big, small]) => (
               <div key={small} className="bg-background p-5">
@@ -229,7 +229,9 @@ const FrenchNclc7 = () => {
           Score equivalencies and CRS points reflect IRCC's published rules as of{" "}
           {FRENCH.factsCheckedOn}; IRCC can change them at any time, and has consulted on the
           French bonus points in 2026. We do not guarantee any test score, invitation to apply or
-          immigration outcome. Always confirm current rules on canada.ca.
+          immigration outcome. The 7 month timeline is our program plan for students who attend
+          every class and complete the practice set each week; how long you need depends on your
+          starting level and study time. Always confirm current rules on canada.ca.
         </p>
       </section>
     </div>
