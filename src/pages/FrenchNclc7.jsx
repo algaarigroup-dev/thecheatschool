@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import VoiceWave from "@/components/pages/french/VoiceWave";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import NclcChecker from "@/components/pages/french/NclcChecker";
+import PointsRail from "@/components/pages/french/PointsRail";
+import { ArrowRight, MessageCircle, Gauge } from "lucide-react";
 import { FRENCH } from "@/config/site";
 
-// French NCLC 7 program page: "NCLC 7 in 7 Points".
+// French NCLC 7 program page: "NCLC 7 in 7 Months".
 // Immigration facts below were checked against IRCC's published
 // TCF Canada equivalency chart; keep FRENCH.factsCheckedOn current.
 
@@ -22,6 +24,7 @@ const tcfScores = [
 const points = [
   {
     n: 1,
+    short: "What NCLC 7 is",
     title: "NCLC 7 is Canada's French benchmark that counts",
     body: (
       <>
@@ -45,6 +48,7 @@ const points = [
   },
   {
     n: 2,
+    short: "Up to 50 CRS points",
     title: "It can be worth up to 50 extra CRS points",
     body: (
       <p>
@@ -57,6 +61,7 @@ const points = [
   },
   {
     n: 3,
+    short: "All four skills",
     title: "All four skills, or it doesn't count",
     body: (
       <p>
@@ -68,6 +73,7 @@ const points = [
   },
   {
     n: 4,
+    short: "Live classes",
     title: "Live classes with a teacher, not an app",
     body: (
       <p>
@@ -79,6 +85,7 @@ const points = [
   },
   {
     n: 5,
+    short: "Built for the TCF",
     title: "Built around the TCF Canada",
     body: (
       <p>
@@ -90,6 +97,7 @@ const points = [
   },
   {
     n: 6,
+    short: "Accountability",
     title: "Accountability, the Cheat School way",
     body: (
       <p>
@@ -101,6 +109,7 @@ const points = [
   },
   {
     n: 7,
+    short: "One package",
     title: "One package, one goal",
     body: (
       <p>
@@ -124,11 +133,11 @@ const FrenchNclc7 = () => {
               French for Express Entry
             </p>
             <h1 className="font-primary font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">
-              NCLC <span className="text-primary">7</span> in 7 Points
+              NCLC <span className="text-primary">7</span> in 7 Months
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/80 font-secondary max-w-xl">
-              Everything you need to know about reaching NCLC 7 in French, and how our{" "}
-              {FRENCH.programName} gets you there.
+              Our {FRENCH.programName} is a structured 7 month plan to reach NCLC 7 in all four
+              TCF Canada skills. Here is what that means, and how we get you there.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
@@ -145,12 +154,18 @@ const FrenchNclc7 = () => {
                 Read the 7 Points
               </button>
             </div>
+            <button
+              type="button"
+              onClick={() => document.getElementById("nclc-checker")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              className="mt-5 inline-flex items-center gap-2 text-sm font-secondary font-semibold text-foreground/80 hover:text-primary underline underline-offset-4 decoration-primary/40 cursor-pointer">
+              <Gauge className="w-4 h-4" /> Already have TCF or mock scores? Check your NCLC level
+            </button>
           </div>
           <div className="grid grid-cols-2 gap-px bg-black border border-black rounded-sm overflow-hidden shadow-md">
             {[
               ["Up to 50", "extra CRS points"],
               ["4 of 4", "skills at NCLC 7"],
-              ["Live", "instructor led classes"],
+              ["7 months", "structured plan"],
               [FRENCH.nextBatch || "Now", FRENCH.nextBatch ? "next batch" : "enrolling"],
             ].map(([big, small]) => (
               <div key={small} className="bg-background p-5">
@@ -164,7 +179,8 @@ const FrenchNclc7 = () => {
 
       {/* The 7 points */}
       <section className="py-16 md:py-24 px-4 sm:px-6 bg-background">
-        <ol className="max-w-4xl mx-auto flex flex-col">
+        <PointsRail points={points} />
+        <ol id="seven-points" className="max-w-4xl mx-auto flex flex-col">
           {points.map((p) => (
             <li
               key={p.n}
@@ -184,8 +200,10 @@ const FrenchNclc7 = () => {
         </ol>
       </section>
 
+      <NclcChecker whatsappE164={FRENCH.whatsappE164} />
+
       {/* CTA */}
-      <section className="px-4 sm:px-6 pb-16">
+      <section className="px-4 sm:px-6 pt-16 pb-16">
         <div className="max-w-4xl mx-auto bg-primary text-white rounded-xl p-8 md:p-12 flex flex-col md:flex-row md:items-center gap-6 justify-between">
           <div>
             <h2 className="font-primary text-3xl md:text-4xl font-bold">Ready to start?</h2>
@@ -211,7 +229,9 @@ const FrenchNclc7 = () => {
           Score equivalencies and CRS points reflect IRCC's published rules as of{" "}
           {FRENCH.factsCheckedOn}; IRCC can change them at any time, and has consulted on the
           French bonus points in 2026. We do not guarantee any test score, invitation to apply or
-          immigration outcome. Always confirm current rules on canada.ca.
+          immigration outcome. The 7 month timeline is our program plan for students who attend
+          every class and complete the practice set each week; how long you need depends on your
+          starting level and study time. Always confirm current rules on canada.ca.
         </p>
       </section>
     </div>
