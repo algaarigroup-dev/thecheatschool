@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App, { preloadCurrentPage } from "./App.jsx";
+import App from "./App.jsx";
+import { preloadCurrentPage } from "./routes";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
