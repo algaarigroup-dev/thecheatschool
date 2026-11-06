@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import VoiceWave from "@/components/pages/french/VoiceWave";
 import NclcChecker from "@/components/pages/french/NclcChecker";
 import PointsRail from "@/components/pages/french/PointsRail";
+import FrenchFaq from "@/components/pages/french/FrenchFaq";
 import { ArrowRight, MessageCircle, Gauge } from "lucide-react";
 import { FRENCH } from "@/config/site";
 
@@ -136,8 +137,9 @@ const FrenchNclc7 = () => {
               NCLC <span className="text-primary">7</span> in 7 Months
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/80 font-secondary max-w-xl">
-              Our {FRENCH.programName} is a structured 7 month plan to reach NCLC 7 in all four
-              TCF Canada skills. Here is what that means, and how we get you there.
+              The Cheat School's {FRENCH.programName} is a live online French program that takes
+              Express Entry candidates to NCLC 7 on the TCF Canada, on a structured 7 month plan.
+              Join from the UAE, India or anywhere.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
@@ -201,6 +203,8 @@ const FrenchNclc7 = () => {
       </section>
 
       <NclcChecker whatsappE164={FRENCH.whatsappE164} />
+
+      <FrenchFaq />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 pt-16 pb-16">

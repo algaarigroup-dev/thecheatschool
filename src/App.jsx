@@ -1,17 +1,18 @@
-import React, { lazy } from "react";
+import React from "react";
+import lazyPreload from "./utils/lazyPreload";
 import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
-const Events = lazy(() => import("./pages/EventsPage"));
-const Gallery = lazy(() => import("./pages/GalleryPage"));
-const ContactUs = lazy(() => import("./pages/ContactUsPage"));
+const Events = lazyPreload(() => import("./pages/EventsPage"));
+const Gallery = lazyPreload(() => import("./pages/GalleryPage"));
+const ContactUs = lazyPreload(() => import("./pages/ContactUsPage"));
 import LandingPage from "./pages/LandingPage";
-const BlogsPage = lazy(() => import("./pages/BlogsPage"));
-const BlogDetailPage = lazy(() => import("./pages/BlogDetailPage"));
+const BlogsPage = lazyPreload(() => import("./pages/BlogsPage"));
+const BlogDetailPage = lazyPreload(() => import("./pages/BlogDetailPage"));
 import NotFound from "./pages/not-found";
-const CivilEngineering = lazy(() => import("./pages/CivilEngineering"));
-const AiCourses = lazy(() => import("./pages/AiEngineering"));
-const LegalPage = lazy(() => import("./pages/LegalPage"));
-const FrenchNclc7 = lazy(() => import("./pages/FrenchNclc7"));
+const CivilEngineering = lazyPreload(() => import("./pages/CivilEngineering"));
+const AiCourses = lazyPreload(() => import("./pages/AiEngineering"));
+const LegalPage = lazyPreload(() => import("./pages/LegalPage"));
+const FrenchNclc7 = lazyPreload(() => import("./pages/FrenchNclc7"));
 
 // Hash routing is used only for the hosted preview build (VITE_PREVIEW=1).
 const createRouter = import.meta.env.VITE_PREVIEW ? createHashRouter : createBrowserRouter;
@@ -66,6 +67,24 @@ const router = createRouter([
   element: <NotFound />
 }]
 );
+
+// Load the code for the page being opened before React takes over the
+// prerendered HTML (see main.jsx).
+const PAGE_BY_PATH = [
+  [/^\/events\/?$/, Events],
+  [/^\/gallery\/?$/, Gallery],
+  [/^\/blogs\/?$/, BlogsPage],
+  [/^\/blogs\/[^/]+\/?$/, BlogDetailPage],
+  [/^\/contact-us\/?$/, ContactUs],
+  [/^\/civil-engineering\/?$/, CivilEngineering],
+  [/^\/ai-engineering\/?$/, AiCourses],
+  [/^\/french-nclc-7\/?$/, FrenchNclc7],
+  [/^\/(terms|privacy|refund-policy)\/?$/, LegalPage],
+];
+export const preloadCurrentPage = (pathname) => {
+  const hit = PAGE_BY_PATH.find(([re]) => re.test(pathname));
+  return hit ? hit[1].preload().catch(() => {}) : Promise.resolve();
+};
 
 const App = () => {
   return <RouterProvider router={router} />;

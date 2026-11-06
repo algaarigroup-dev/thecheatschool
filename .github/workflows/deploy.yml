@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install headless browser for page prerendering
+        run: npx playwright install --with-deps chromium
+
       - name: Build React/Vite website
         run: npm run build
 
@@ -40,3 +43,20 @@ jobs:
           remote_path: "/domains/thecheatschool.in/public_html/"
           sftp_only: true
           delete_remote_files: false
+
+      # "./dist/*" skips hidden files, so upload the routing rules explicitly.
+      - name: Deploy .htaccess routing rules
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.HOSTINGER_HOST }}
+          port: ${{ secrets.HOSTINGER_PORT }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          local_path: "./dist/.htaccess"
+          remote_path: "/domains/thecheatschool.in/public_html/"
+          sftp_only: true
+          delete_remote_files: false
+
+      - name: Notify Bing and other engines that pages changed (IndexNow)
+        run: node scripts/indexnow.mjs
+        continue-on-error: true
