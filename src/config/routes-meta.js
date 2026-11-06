@@ -1,3 +1,5 @@
+import { FRENCH_FAQ } from "../content/french-faq.js";
+
 // Per route SEO metadata. Used by pages at runtime and by
 // scripts/prerender-meta.mjs at build time to write static HTML per route.
 export const ROUTES_META = {
@@ -17,9 +19,45 @@ export const ROUTES_META = {
       "Our AI Engineering bootcamp is launching soon. Get notified when admissions open.",
   },
   "/french-nclc-7": {
-    title: "NCLC 7 in 7 Points | French for Express Entry | The Cheat School",
+    title: "NCLC 7 in 7 Months | French for Express Entry | The Cheat School",
     description:
-      "Reach NCLC 7 in French for Express Entry: the TCF Canada scores you need, why it can add up to 50 CRS points, and how our live, exam focused NCLC 7 Fast Track works.",
+      "The NCLC 7 Fast Track: a live online French program that prepares Express Entry candidates for NCLC 7 on the TCF Canada, on a 7 month plan. Join from the UAE, India or anywhere.",
+    keywords: ["NCLC 7 French course", "TCF Canada preparation", "French for Express Entry", "NCLC 7 online", "TCF Canada Dubai", "French classes UAE Express Entry"],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Course",
+          "@id": "https://thecheatschool.in/french-nclc-7#course",
+          name: "NCLC 7 Fast Track",
+          description:
+            "Live, instructor led online French program that prepares Express Entry candidates to reach NCLC 7 in all four TCF Canada skills: listening, reading, speaking and writing.",
+          url: "https://thecheatschool.in/french-nclc-7",
+          inLanguage: "fr",
+          educationalLevel: "NCLC 7 (TCF Canada)",
+          teaches: ["French listening", "French reading", "French speaking", "French writing", "TCF Canada exam strategy"],
+          timeRequired: "P7M",
+          provider: {
+            "@type": "EducationalOrganization",
+            name: "The Cheat School",
+            url: "https://thecheatschool.in",
+          },
+          hasCourseInstance: {
+            "@type": "CourseInstance",
+            courseMode: "Online",
+            courseWorkload: "Live instructor led classes on a fixed weekly schedule",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: FRENCH_FAQ.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        },
+      ],
+    },
   },
   "/blogs": {
     title: "Cheat Sheets for Engineering Students & French Learners | The Cheat School",

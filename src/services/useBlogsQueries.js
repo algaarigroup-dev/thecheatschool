@@ -109,6 +109,8 @@ export const useGetBlogBySlug = (slug) => {
   return useQuery({
     queryKey: ['blogs', 'detail', slug],
     queryFn: () => getBlogBySlug(slug),
+    // Built in articles render instantly, matching their prerendered HTML.
+    initialData: () => (getArticle(slug) ? toPost(getArticle(slug)) : undefined),
     enabled: !!slug,
     staleTime: 10 * 60 * 1000,
     gcTime: 30 * 60 * 1000,
