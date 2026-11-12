@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.HOSTINGER_USERNAME }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
           local_path: "./dist/*"
-          remote_path: "/domains/thecheatschool.in/public_html/"
+          remote_path: "domains/thecheatschool.in/public_html/"
           sftp_only: true
           delete_remote_files: false
 
@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.HOSTINGER_USERNAME }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
           local_path: "./dist/.htaccess"
-          remote_path: "/domains/thecheatschool.in/public_html/"
+          remote_path: "domains/thecheatschool.in/public_html/"
           sftp_only: true
           delete_remote_files: false
 
