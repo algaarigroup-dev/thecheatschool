@@ -23,11 +23,12 @@ const replaceTag = (html, regex, replacement) => {
   return html.replace(regex, replacement);
 };
 
-const render = (route, { title, description, ogType, jsonLd, bodyHtml, keywords }) => {
+const render = (route, { title, description, ogType, jsonLd, bodyHtml, keywords, noindex }) => {
   const url = `${SITE.url}${route === "/" ? "/" : route}`;
   let html = shell;
   if (ogType) html = replaceTag(html, /<meta property="og:type" content="[^"]*"\s*\/?>/, `<meta property="og:type" content="${ogType}" />`);
   const extraHead = [
+    noindex ? `<meta name="robots" content="noindex, follow" />` : "",
     keywords ? `<meta name="keywords" content="${esc(keywords.join(", "))}" />` : "",
     jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>` : "",
   ].join("");
@@ -95,7 +96,7 @@ try {
 
 const today = new Date().toISOString().slice(0, 10);
 const urls = [
-  ...routes.map(([route]) => ({ loc: `${SITE.url}${route === "/" ? "/" : route}`, lastmod: today })),
+  ...routes.filter(([, m]) => !m.noindex).map(([route]) => ({ loc: `${SITE.url}${route === "/" ? "/" : route}`, lastmod: today })),
   ...ARTICLES.map((a) => ({ loc: `${SITE.url}/blogs/${a.slug}`, lastmod: a.updated || a.date })),
   ...posts.map((p) => ({ loc: `${SITE.url}/blogs/${encodeURIComponent(p.slug)}`, lastmod: (p.publishedAt || today).slice(0, 10) })),
 ];

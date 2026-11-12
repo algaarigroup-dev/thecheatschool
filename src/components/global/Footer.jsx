@@ -19,9 +19,9 @@ const Footer = () => {
     <footer className="w-full bottom-0 pb-30 bg-black text-white px-6 py-10 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
         <div>
-          <h1 className="text-3xl font-primary font-bold text-primary mb-3">
+          <p className="text-3xl font-primary font-bold text-primary mb-3">
             THE CHEAT SCHOOL
-          </h1>
+          </p>
           <p className="text-gray-300 font-teritiary text-[15px] leading-relaxed">
             Empowering students with the right resources and a community that
             grows together. Learn smarter, collaborate better, and achieve more

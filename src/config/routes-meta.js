@@ -4,9 +4,9 @@ import { FRENCH_FAQ } from "../content/french-faq.js";
 // scripts/prerender-meta.mjs at build time to write static HTML per route.
 export const ROUTES_META = {
   "/": {
-    title: "The Cheat School | Real Projects, Not Lectures",
+    title: "The Cheat School | Live Bootcamps for Engineers and NCLC 7 French",
     description:
-      "Not another online course. Live classes, a real project deliverable every month, a public track record, daily accountability and 1:1 communication coaching for engineering students.",
+      "Live online programs with real deliverables: the Civil Cheatcamp, a 90 day civil engineering bootcamp, and the NCLC 7 Fast Track, French for Express Entry candidates.",
   },
   "/civil-engineering": {
     title: "Civil Cheatcamp | 90 Day Civil Engineering Bootcamp | The Cheat School",
@@ -17,6 +17,7 @@ export const ROUTES_META = {
     title: "AI Engineering Bootcamp (Coming Soon) | The Cheat School",
     description:
       "Our AI Engineering bootcamp is launching soon. Get notified when admissions open.",
+    noindex: true,
   },
   "/french-nclc-7": {
     title: "NCLC 7 in 7 Months | French for Express Entry | The Cheat School",
@@ -71,7 +72,7 @@ export const ROUTES_META = {
   "/contact-us": {
     title: "Contact & Register | The Cheat School",
     description:
-      "Register for the next Cheat School bootcamp or reach the team by phone, WhatsApp or email.",
+      "Register for the Civil Cheatcamp or the NCLC 7 Fast Track French program, or reach The Cheat School team in Hyderabad by phone, WhatsApp or email.",
   },
   "/terms": {
     title: "Terms of Service | The Cheat School",

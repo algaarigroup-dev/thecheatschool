@@ -4,7 +4,6 @@ import lazyPreload from "./utils/lazyPreload";
 import { createBrowserRouter, createHashRouter } from "react-router-dom";
 import Layout from "./Layout";
 const Events = lazyPreload(() => import("./pages/EventsPage"));
-const Gallery = lazyPreload(() => import("./pages/GalleryPage"));
 const ContactUs = lazyPreload(() => import("./pages/ContactUsPage"));
 import LandingPage from "./pages/LandingPage";
 const BlogsPage = lazyPreload(() => import("./pages/BlogsPage"));
@@ -30,10 +29,6 @@ export const router = createRouter([
   {
     path: "events",
     element: <Events />
-  },
-  {
-    path: "gallery",
-    element: <Gallery />
   },
   {
     path: "blogs",
@@ -73,7 +68,6 @@ export const router = createRouter([
 // prerendered HTML (see main.jsx).
 const PAGE_BY_PATH = [
   [/^\/events\/?$/, Events],
-  [/^\/gallery\/?$/, Gallery],
   [/^\/blogs\/?$/, BlogsPage],
   [/^\/blogs\/[^/]+\/?$/, BlogDetailPage],
   [/^\/contact-us\/?$/, ContactUs],

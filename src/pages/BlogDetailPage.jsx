@@ -137,7 +137,7 @@ const BlogDetailPage = () => {
             content={blog.body}
             serializers={{
               h1: (props) =>
-              <h1 className="text-4xl font-primary font-bold text-secondary mt-12 mb-6 leading-tight" {...props} />,
+              <h2 className="text-4xl font-primary font-bold text-secondary mt-12 mb-6 leading-tight" {...props} />,
 
               h2: (props) =>
               <h2 className="text-3xl font-primary font-bold text-secondary mt-10 mb-5 leading-tight" {...props} />,

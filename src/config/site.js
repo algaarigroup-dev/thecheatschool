@@ -4,10 +4,10 @@
 export const SITE = {
   name: "The Cheat School",
   url: "https://thecheatschool.in",
-  defaultTitle: "The Cheat School | Real Projects, Not Lectures",
+  defaultTitle: "The Cheat School | Live Bootcamps for Engineers and NCLC 7 French",
   defaultDescription:
-    "Not another online course. Live classes, a real project deliverable every month, a public track record, daily accountability and 1:1 communication coaching for engineering students.",
-  ogImage: "/the-cheat-school.png",
+    "Live online programs with real deliverables: the Civil Cheatcamp, a 90 day civil engineering bootcamp, and the NCLC 7 Fast Track, French for Express Entry candidates.",
+  ogImage: "/og-image.png",
 };
 
 export const CONTACT = {
@@ -43,12 +43,12 @@ export const NEXT_BATCH_DATE = "";
 // Legal details. Terms and Privacy pages stay hidden until legalName and
 // address are filled in. The Refund page shows as soon as refundPolicy is set.
 export const LEGAL = {
-  legalName: "", // e.g. "The Cheat School Private Limited"
-  address: "", // registered address in India
-  jurisdictionCity: "", // e.g. "Hyderabad"
+  legalName: "Emiratiyo Estates Private Limited",
+  address: "Rd Number 3, Sri Nagar Colony, Venkateshwara Hills, Banjara Hills, Hyderabad, Telangana 500073, India",
+  jurisdictionCity: "Hyderabad",
   // Refund rule. "none" = no refunds once the enrolment agreement is signed.
   refundPolicy: "none",
-  lastUpdated: "22 October 2026",
+  lastUpdated: "12 November 2026",
 };
 
 export const LEGAL_READY = Boolean(LEGAL.legalName && LEGAL.address);
