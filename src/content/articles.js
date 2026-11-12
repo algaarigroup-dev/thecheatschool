@@ -10,7 +10,9 @@
 const D = "2026-10-22";
 const AUTHOR = "The Cheat School Team";
 
-export const ARTICLES = [
+import { FRENCH_ARTICLES_2 } from "./articles-french-2.js";
+
+const BASE_ARTICLES = [
   {
     slug: "autocad-shortcuts-cheat-sheet",
     title: "AutoCAD Shortcuts Cheat Sheet: 40 Commands Every Civil Engineering Student Should Know",
@@ -476,6 +478,8 @@ export const ARTICLES = [
     ],
   },
 ];
+
+export const ARTICLES = [...BASE_ARTICLES, ...FRENCH_ARTICLES_2];
 
 export const getArticle = (slug) => ARTICLES.find((a) => a.slug === slug);
 
