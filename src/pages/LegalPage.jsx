@@ -9,11 +9,11 @@ const docs = {
     title: "Terms of Service",
     sections: [
       ["Who we are", `${SITE.name} is operated by ${LEGAL.legalName}, ${LEGAL.address} ("we", "us"). These terms apply to anyone who registers for or attends one of our programs.`],
-      ["Enrolment", "Your seat in a batch is confirmed once we receive full payment of the program fee and send you a written confirmation. Fees, batch dates and inclusions are those stated on the course page or in your enrolment confirmation at the time you pay."],
+      ["Enrolment", "Your seat in a batch is confirmed once you sign your enrolment agreement, we receive payment of the program fee, and we send you a written confirmation. Fees, batch dates and inclusions are those stated on the course page or in your enrolment confirmation at the time you pay."],
       ["Program delivery", "Programs are delivered live online on the published schedule. We may reschedule individual sessions for reasons beyond our control and will offer a replacement session or recording when we do."],
       ["Your responsibilities", "You agree to attend sessions, submit assignments honestly and treat mentors and other students with respect. Sharing paid course material outside the program is not permitted. We may remove a student for serious misconduct without refund."],
       ["Certificate", "A certificate of completion is issued only when all required assignments and deliverables are submitted by their deadlines. It certifies completion of our program and is not a university degree or government accreditation."],
-      ["Internships and outcomes", "Internship documentation and project work are part of the program. We do not guarantee a job, placement, salary or specific result."],
+      ["Outcomes", "Project work and internship documentation are part of our engineering programs. We do not guarantee a job, placement, salary, exam score (including any TCF Canada result or NCLC level), visa, immigration or Express Entry outcome, or any other specific result."],
       ["Refunds", "Refunds are governed by our Refund Policy."],
       ["Liability", "To the extent permitted by law, our total liability to you for any claim relating to a program is limited to the fee you paid for that program."],
       ["Governing law", `These terms are governed by the laws of India, and the courts of ${LEGAL.jurisdictionCity || "our registered city"} have jurisdiction.`],

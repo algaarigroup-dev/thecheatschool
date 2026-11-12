@@ -6,7 +6,7 @@ import Loader from "../components/global/Loader";
 import ErrorDisplay from "../components/global/ErrorDisplay";
 
 const EventsPage = () => {
-  const { data: events = [], isLoading, isError, error } = useGetAllEvents();
+  const { data: events = [], isLoading, isError } = useGetAllEvents();
 
   const handleJoinEvent = (event) => {
     if (event.registrationLink) {
@@ -29,21 +29,20 @@ const EventsPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <Loader />
+      <div className="min-h-screen bg-background">
+        <div className="max-w-7xl mx-auto px-4 pt-12"><h1 className="text-5xl md:text-6xl mt-19 font-primary font-bold text-foreground mb-4">Our Events</h1><p className="font-secondary text-foreground/70">Live webinars and workshops from The Cheat School for engineering students and French learners.</p></div>
+        <div className="flex justify-center py-24"><Loader /></div>
       </div>);
 
   }
 
   if (isError) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <ErrorDisplay
-          heading="Failed to load events"
-          message={
-          error?.message || "Unable to fetch events. Please try again later."
-          } />
-        
+      <div className="min-h-screen bg-background">
+        <div className="max-w-7xl mx-auto px-4 pt-12"><h1 className="text-5xl md:text-6xl mt-19 font-primary font-bold text-foreground mb-4">Our Events</h1><p className="font-secondary text-foreground/70">Live webinars and workshops from The Cheat School for engineering students and French learners.</p></div>
+        <div className="flex justify-center py-24"><ErrorDisplay
+          heading="Events are taking a moment to load"
+          message="Please refresh in a minute, or message us on WhatsApp for upcoming webinar dates." /></div>
       </div>);
 
   }

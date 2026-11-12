@@ -1,4 +1,57 @@
+# The Cheat School welcomes search engines and AI assistants.
+# Listed explicitly so no AI crawler treats the site as off limits.
+
 User-agent: *
+Allow: /
+
+# Google Search, AI Overviews and AI Mode
+User-agent: Googlebot
+Allow: /
+
+# Lets Gemini use this site for answers and grounding
+User-agent: Google-Extended
+Allow: /
+
+# Bing, which also powers Microsoft Copilot
+User-agent: bingbot
+Allow: /
+
+# ChatGPT search, ChatGPT browsing and OpenAI models
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Apple (Siri, Spotlight, Apple Intelligence)
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://thecheatschool.in/sitemap.xml

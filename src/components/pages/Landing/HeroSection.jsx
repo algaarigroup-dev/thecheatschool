@@ -143,15 +143,15 @@ const HeroSection = () => {
               className="inline-block animate-[fadeIn_0.5s_ease-in-out] text-primary min-w-[280px] md:min-w-[320px]">
               
               {words[currentWord]}
-            </span>
-          </h1>
-          <h1 className="text-foreground text-5xl md:text-7xl lg:text-8xl font-bold font-primary tracking-tight mt-4">
+            </span>{" "}
+            <span className="block mt-4">
             <span className="block md:inline">to </span>
             <span
               key={currentPhrase}
               className="inline-block animate-[fadeIn_0.5s_ease-in-out] text-primary min-w-[320px] md:min-w-[400px]">
               
               {phrases[currentPhrase]}
+            </span>
             </span>
           </h1>
         </div>

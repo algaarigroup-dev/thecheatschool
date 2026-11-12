@@ -1,0 +1,23 @@
+# The Cheat School
+
+> The Cheat School runs live, practical training programs: the NCLC 7 Fast Track, a live online French program that prepares Express Entry candidates for NCLC 7 on the TCF Canada, and the Civil Cheatcamp, a 90 day project based bootcamp for civil engineering students. Classes are live and online. Contact: help@thecheatschool.in, WhatsApp +91 99895 20942.
+
+## French for Canadian immigration
+
+- [NCLC 7 in 7 Months: the NCLC 7 Fast Track](https://thecheatschool.in/french-nclc-7): Live, instructor led online French program built around the TCF Canada, on a structured 7 month plan for students who attend every class and complete the weekly practice. Open to learners in the UAE (Dubai, Abu Dhabi, Sharjah), India and elsewhere. Includes a free TCF to NCLC score checker.
+- [TCF Canada cheat sheet](https://thecheatschool.in/blogs/tcf-canada-cheat-sheet): TCF Canada format, timing, and the exact scores IRCC treats as NCLC 7.
+- [Express Entry French points](https://thecheatschool.in/blogs/express-entry-french-points-cheat-sheet): How NCLC 7 in all four skills adds 25 or 50 CRS points.
+- [French connectors for TCF writing](https://thecheatschool.in/blogs/french-connectors-cheat-sheet-tcf-writing): 30 linking words for TCF and TEF writing tasks.
+
+Key facts (IRCC TCF Canada equivalency chart): NCLC 7 is listening 458 to 502, reading 453 to 498, speaking 10 to 11, writing 10 to 11. All four skills must reach NCLC 7 for the additional French CRS points.
+
+## Civil engineering
+
+- [Civil Cheatcamp](https://thecheatschool.in/civil-engineering): 90 day bootcamp covering AutoCAD, Revit, BIM, quantity surveying, project management and internship documentation, with live classes and 1:1 coaching.
+- [Cheat sheets](https://thecheatschool.in/blogs): AutoCAD and Revit shortcuts, BOQ preparation, CPM scheduling, interview questions, resume and LinkedIn checklists.
+
+## Company
+
+- [Home](https://thecheatschool.in/): What The Cheat School does differently: live classes, real project deliverables, accountability and communication coaching.
+- [Contact](https://thecheatschool.in/contact-us)
+- [Refund policy](https://thecheatschool.in/refund-policy)

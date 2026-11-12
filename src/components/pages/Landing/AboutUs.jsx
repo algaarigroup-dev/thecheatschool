@@ -157,8 +157,12 @@ const AboutUs = () => {
             <div className="flex justify-center">
               <div className="min-w-[320px] min-h-[320px] sm:min-w-[400px] sm:min-h-[400px] md:min-w-[500px] md:min-h-[500px]">
                 <img
-                  src={`${import.meta.env.BASE_URL}pt-3.png`}
-                  alt="Professional Training Education"
+                  src={`${import.meta.env.BASE_URL}pt-3.webp`}
+                  alt="Students working on real engineering projects at The Cheat School"
+                  width="806"
+                  height="570"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full max-w-full max-h-full object-contain" />
                 
               </div>

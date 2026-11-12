@@ -63,7 +63,15 @@ const ContactUsPage = () => {
     <>
       <Toaster position="top-center" />
       
-      <div className="max-w-6xl mx-auto p-6 mt-24 grid grid-cols-1 md:grid-cols-2 gap-[90px]">
+      <div className="max-w-6xl mx-auto px-6 pt-6 mt-24">
+        <h1 className="text-5xl md:text-6xl font-primary font-bold text-foreground mb-3">
+          Contact The Cheat School
+        </h1>
+        <p className="font-secondary text-foreground/70 max-w-2xl">
+          Register for the next batch, or reach us by phone, WhatsApp or email about the Civil Cheatcamp or the NCLC 7 Fast Track French program.
+        </p>
+      </div>
+      <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-[90px]">
         
         {}
         <div>
